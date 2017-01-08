@@ -5,9 +5,9 @@ import org.chocosolver.solver.variables.IntVar;
 
 /**
  * @author Fab
- * La Classe des contraintes recense l'ensemble des contraintes existantes
+ * La Classe du modèle à partir duquel appeler les contraintes
  */
-public class Contraintes {
+public class Modele {
 	// Le nombre d'Arbitres pour déterminer le domaine de valeurs des variables
 	private int nbArbitres;
 	
@@ -30,14 +30,20 @@ public class Contraintes {
 	 * @param nbArbitres
 	 * @param nbMatchs
 	 */
-	public Contraintes(int nbArbitres,int nbMatchs){
+	public Modele(int nbArbitres,int nbMatchs){
 		this.nbArbitres = nbArbitres;
 		this.nbMatchs = nbMatchs;
 		// Création du modèle sous Choco
 		this.model = new Model("One day problem");
 		// Création des variables et initialisation
 		this.variables = model.intVarMatrix( nbMatchs, 3, 0, nbArbitres);
-	}
+	}	
 	
+	/**
+	 * @return Le model lié au problème
+	 */
+	public Model getModele(){
+		return this.model;
+	}
 
 }
