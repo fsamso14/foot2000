@@ -17,7 +17,7 @@ public class Contraintes {
 	public final static int ARBITRE_TOUCHE2 =2;
 	
 	/**
-	 * Le Constructeur de la classe contraintes
+	 * Le Constructeur de la classe Contraintes
 	 * @param nbArbitres
 	 * @param nbMatchs
 	 */
@@ -25,5 +25,6 @@ public class Contraintes {
 		this.nbArbitres = nbArbitres;
 		this.nbMatchs = nbMatchs;
 	}
+	
 
 }
