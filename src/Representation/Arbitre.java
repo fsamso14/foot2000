@@ -1,7 +1,7 @@
 package Representation;
 public class Arbitre implements IArbitre {
 
-	private CategorieArbitre categorie;
+	private int categorie;
 	private String arbitreID;
 	private String club;
 	private String nom;
@@ -9,7 +9,7 @@ public class Arbitre implements IArbitre {
 	private String adresse;
 
 	// CONSTRUCTEUR
-	public Arbitre(CategorieArbitre categorie, String arbitreID, String club,
+	public Arbitre(int categorie, String arbitreID, String club,
 			String nom, String prenom, String adresse) {
 		this.categorie = categorie;
 		this.arbitreID = arbitreID;
@@ -19,7 +19,7 @@ public class Arbitre implements IArbitre {
 		this.adresse = adresse;
 	}
 
-	public CategorieArbitre getCategorie() {
+	public int getCategorie() {
 		// TODO Auto-generated method stub
 		return this.categorie;
 	}
@@ -49,7 +49,7 @@ public class Arbitre implements IArbitre {
 		return this.adresse;
 	}
 
-	public void setCategorie(CategorieArbitre c) {
+	public void setCategorie(int c) {
 		// TODO Auto-generated method stub
 		this.categorie = c;
 	}

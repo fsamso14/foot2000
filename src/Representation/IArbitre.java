@@ -3,7 +3,7 @@ package Representation;
 public interface IArbitre {
 	
 	//GETTER
-	CategorieArbitre getCategorie();
+	int getCategorie();
 	String getArbitreID();
 	String getClub();
 	String getNom();
@@ -11,7 +11,7 @@ public interface IArbitre {
 	String getAdresse();
 	
 	//SETTER
-	void setCategorie(CategorieArbitre c);
+	void setCategorie(int c);
 	void setArbitreID(String i);
 	void setClub(String c);
 	void setNom(String n);
