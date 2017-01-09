@@ -45,5 +45,12 @@ public class Modele {
 	public Model getModele(){
 		return this.model;
 	}
+	
+	/**
+	 * @return Les contraintes du problème
+	 */
+	public IntVar[][] getVars(){
+		return this.variables;
+	}
 
 }
