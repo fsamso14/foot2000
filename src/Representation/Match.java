@@ -9,11 +9,11 @@ public class Match {
 	private ArbitreCentral arbitreCentral;
 	private ArbitreAssistant arbitreAssistant1;
 	private ArbitreAssistant arbitreAssistant2;
-	private CategorieMatch categorie;
+	private ListeCategorieMatch categorie;
 
 	public Match(Equipe receveuse, Equipe visiteuse,
 			ArbitreCentral arbitreCentral, ArbitreAssistant arbitreAssistant1,
-			ArbitreAssistant arbitreAssistant2, CategorieMatch categorie) throws Exception {
+			ArbitreAssistant arbitreAssistant2, ListeCategorieMatch categorie) throws Exception {
 		if (receveuse.equals(visiteuse)
 				|| arbitreCentral.equals(arbitreAssistant1)
 				|| arbitreCentral.equals(arbitreAssistant2)
@@ -29,7 +29,7 @@ public class Match {
 		this.categorie = categorie;
 	}
 	
-	public CategorieMatch getCategorie(){
+	public ListeCategorieMatch getCategorie(){
 		return this.categorie;
 	}
 	

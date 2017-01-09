@@ -1,6 +1,6 @@
 package Representation;
 
-public class CategorieMatch {
+public class ListeCategorieMatch {
 
 	public final int DSD = 12;
 	public final int D1 = 11;
