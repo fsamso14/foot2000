@@ -52,5 +52,13 @@ public class Modele {
 	public IntVar[][] getVars(){
 		return this.variables;
 	}
+	
+	public int getNbMatchs(){
+		return this.nbMatchs;
+	}
+	
+	public int getNbArbitres(){
+		return this.nbArbitres;
+	}
 
 }
