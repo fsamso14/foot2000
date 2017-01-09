@@ -3,6 +3,8 @@ package foot2000;
 import org.chocosolver.solver.Model;
 import org.chocosolver.solver.variables.IntVar;
 
+import Representation.Representation;
+
 /**
  * @author Fab
  * La Classe du modèle à partir duquel appeler les contraintes
@@ -25,6 +27,8 @@ public class Modele {
 	// Le modèle qui contient les variables
 	private Model model;
 	
+	// Representation de la journ�e
+	private Representation rpz;
 	/**
 	 * Le Constructeur de la classe Contraintes
 	 * @param nbArbitres
@@ -51,6 +55,13 @@ public class Modele {
 	 */
 	public IntVar[][] getVars(){
 		return this.variables;
+	}
+	
+	/**
+	 * @return La representation des matchs et des arbitres
+	 */
+	public Representation getRepresentation(){
+		return this.rpz;
 	}
 
 }

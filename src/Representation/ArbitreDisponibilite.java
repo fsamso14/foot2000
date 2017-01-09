@@ -1,12 +1,12 @@
 package Representation;
 
-public class ArbitreDisponibilité {
+public class ArbitreDisponibilite {
 	
 	private Arbitre arbitre;
 	
 	private boolean dispo;
 	
-	public ArbitreDisponibilité(Arbitre arbitre){
+	public ArbitreDisponibilite(Arbitre arbitre){
 		this.arbitre = arbitre;
 		this.dispo = true;
 	}
