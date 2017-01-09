@@ -1,6 +1,6 @@
 package Representation;
 
-public class ArbitreDisponibilité {
+public class ArbitreDisponibilite {
 	
 	private Arbitre arbitre;
 	
