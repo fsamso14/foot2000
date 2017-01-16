@@ -2,14 +2,14 @@ package Representation;
 public class Arbitre implements IArbitre {
 
 	private CategorieArbitre categorie;
-	private String arbitreID;
+	private int arbitreID;
 	private String club;
 	private String nom;
 	private String prenom;
 	private String adresse;
 
 	// CONSTRUCTEUR
-	public Arbitre(CategorieArbitre categorie, String arbitreID, String club,
+	public Arbitre(CategorieArbitre categorie, int arbitreID, String club,
 			String nom, String prenom, String adresse) {
 		this.categorie = categorie;
 		this.arbitreID = arbitreID;
@@ -24,7 +24,7 @@ public class Arbitre implements IArbitre {
 		return this.categorie;
 	}
 
-	public String getArbitreID() {
+	public int getArbitreID() {
 		// TODO Auto-generated method stub
 		return this.arbitreID;
 	}
@@ -54,7 +54,7 @@ public class Arbitre implements IArbitre {
 		this.categorie = c;
 	}
 
-	public void setArbitreID(String i) {
+	public void setArbitreID(int i) {
 		// TODO Auto-generated method stub
 		this.arbitreID = i;
 	}

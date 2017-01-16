@@ -1,39 +1,39 @@
 package Representation;
-import java.util.UUID;
+
+//import java.util.UUID;
 
 public class Match {
 
-	private String id_match;
+	private int id_match;
 	private Equipe receveuse;
 	private Equipe visiteuse;
-	private ArbitreCentral arbitreCentral;
-	private ArbitreAssistant arbitreAssistant1;
-	private ArbitreAssistant arbitreAssistant2;
-	private ListeCategorieMatch categorie;
+	// private ArbitreCentral arbitreCentral;
+	// private ArbitreAssistant arbitreAssistant1;
+	// private ArbitreAssistant arbitreAssistant2;
+	private int categorie;
 
-	public Match(Equipe receveuse, Equipe visiteuse,
-			ArbitreCentral arbitreCentral, ArbitreAssistant arbitreAssistant1,
-			ArbitreAssistant arbitreAssistant2, ListeCategorieMatch categorie) throws Exception {
-		if (receveuse.equals(visiteuse)
+	public Match(int id_match, Equipe receveuse, Equipe visiteuse,
+			int categorie){
+		/*if (receveuse.equals(visiteuse)
 				|| arbitreCentral.equals(arbitreAssistant1)
 				|| arbitreCentral.equals(arbitreAssistant2)
 				|| arbitreAssistant1.equals(arbitreAssistant2)) {
 			throw new Exception("Erreur dans la construction du Match !");
-		}
-		this.id_match = UUID.randomUUID().toString();
+		}*/
+		this.id_match = id_match;
 		this.receveuse = receveuse;
 		this.visiteuse = visiteuse;
-		this.arbitreCentral = arbitreCentral;
-		this.arbitreAssistant1 = arbitreAssistant1;
-		this.arbitreAssistant2 = arbitreAssistant2;
+		// this.arbitreCentral = arbitreCentral;
+		// this.arbitreAssistant1 = arbitreAssistant1;
+		// this.arbitreAssistant2 = arbitreAssistant2;
 		this.categorie = categorie;
 	}
-	
-	public ListeCategorieMatch getCategorie(){
+
+	public int getCategorie() {
 		return this.categorie;
 	}
-	
-	public String getID(){
+
+	public int getID() {
 		return this.id_match;
 	}
 
@@ -45,7 +45,7 @@ public class Match {
 		return this.visiteuse;
 	}
 
-	public ArbitreCentral getArbitreCentral() {
+	/*public ArbitreCentral getArbitreCentral() {
 		return this.arbitreCentral;
 	}
 
@@ -55,6 +55,6 @@ public class Match {
 
 	public ArbitreAssistant getArbitreAssistant2() {
 		return this.arbitreAssistant2;
-	}
+	}*/
 
 }
