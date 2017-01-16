@@ -11,7 +11,7 @@ public class ContrainteSurGrade implements Contrainte{
 		for(int i = 0; i < nbMatchs ; i++){
 			for ( int j = 0 ; j < nbArbitres ; j++){
 				if(journee.getMatch(i).getCategorie() > journee.getArbitre(j).getCategorie()){
-						mod.getModele();
+						mod.getModele();				
 				}
 			}
 		}
