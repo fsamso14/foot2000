@@ -7,16 +7,18 @@ public class Arbitre implements IArbitre {
 	private String nom;
 	private String prenom;
 	private String adresse;
+	private Ville ville;
 
 	// CONSTRUCTEUR
 	public Arbitre(CategorieArbitre categorie, int arbitreID, String club,
-			String nom, String prenom, String adresse) {
+			String nom, String prenom, String adresse, Ville ville) {
 		this.categorie = categorie;
 		this.arbitreID = arbitreID;
 		this.club = club;
 		this.nom = nom;
 		this.prenom = prenom;
 		this.adresse = adresse;
+		this.ville = ville;
 	}
 
 	public CategorieArbitre getCategorie() {
@@ -49,6 +51,10 @@ public class Arbitre implements IArbitre {
 		return this.adresse;
 	}
 
+	public Ville getVille(){
+		return this.ville;
+	}
+	
 	public void setCategorie(CategorieArbitre c) {
 		// TODO Auto-generated method stub
 		this.categorie = c;

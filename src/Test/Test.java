@@ -5,17 +5,18 @@ import Representation.Equipe;
 import Representation.ListeCategorieArbitre;
 import Representation.ListeCategorieMatch;
 import Representation.Match;
+import Representation.Ville;
 
 public class Test {
 
 	public static void main(String[] args) {
 		Arbitre[] arbitres = new Arbitre[3];
 		arbitres[0] = new Arbitre(ListeCategorieArbitre.D1, 1, "Nantes", "John",
-				"Smith", "adresse");
+				"Smith", "adresse", new Ville("Nantes"));
 		arbitres[1] = new Arbitre(ListeCategorieArbitre.D2, 2, "Carquefou", "Will",
-				"Smith", "adresse");
+				"Smith", "adresse", new Ville("Carquefou"));
 		arbitres[3] = new Arbitre(ListeCategorieArbitre.D3, 3, "Orvault", "Bill",
-				"Smith", "adresse");
+				"Smith", "adresse", new Ville("Orvault"));
 
 		Equipe[] equipes = new Equipe[4];
 		equipes[0] = new Equipe("Equipe0",ListeCategorieMatch.DSD);

@@ -14,18 +14,9 @@ public class Match {
 
 	public Match(int id_match, Equipe receveuse, Equipe visiteuse,
 			int categorie){
-		/*if (receveuse.equals(visiteuse)
-				|| arbitreCentral.equals(arbitreAssistant1)
-				|| arbitreCentral.equals(arbitreAssistant2)
-				|| arbitreAssistant1.equals(arbitreAssistant2)) {
-			throw new Exception("Erreur dans la construction du Match !");
-		}*/
 		this.id_match = id_match;
 		this.receveuse = receveuse;
 		this.visiteuse = visiteuse;
-		// this.arbitreCentral = arbitreCentral;
-		// this.arbitreAssistant1 = arbitreAssistant1;
-		// this.arbitreAssistant2 = arbitreAssistant2;
 		this.categorie = categorie;
 	}
 
