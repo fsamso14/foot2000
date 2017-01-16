@@ -12,8 +12,8 @@ public class DistanceVille {
 	}*/
 	
 	
-	/*			Nantes | Orvault | Carquefou | Chapelle-sur-Erdre
-	 * Nantes	0		
+	/*			Nantes | 	Orvault 	| 	Carquefou 		| Chapelle-sur-Erdre
+	 * Nantes	0		d(Nantes, Orvault)	d(Nantes, Carq)	d(Nantes, Chapelle/Erdre)
 	 * Orvault			0
 	 * Carquefou					0
 	 * Chapelle-sur-Erdre						0

@@ -2,7 +2,7 @@ package Representation;
 
 public class ListeCategorieMatch {
 
-	public final static int DSD = 12;
+	//public final static int DSD = 12;
 	public final static int D1 = 11;
 	public final static int D2 = 10;
 	public final static int D3 = 9;
