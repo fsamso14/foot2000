@@ -1,15 +1,17 @@
 package Representation;
-public class Arbitre implements IArbitre {
+public class Arbitre {
 
-	private int categorie;
+	private CategorieArbitre categorie;
 	private int arbitreID;
 	private String club;
 	private String nom;
 	private String prenom;
 	private String adresse;
+	private Ville ville;
+	public Disponibilites disp;
 
 	// CONSTRUCTEUR
-	public Arbitre(int categorie, int arbitreID, String club,
+	public Arbitre(CategorieArbitre categorie, int arbitreID, String club,
 			String nom, String prenom, String adresse) {
 		this.categorie = categorie;
 		this.arbitreID = arbitreID;
@@ -19,7 +21,7 @@ public class Arbitre implements IArbitre {
 		this.adresse = adresse;
 	}
 
-	public int getCategorie() {
+	public CategorieArbitre getCategorie() {
 		// TODO Auto-generated method stub
 		return this.categorie;
 	}
@@ -49,7 +51,7 @@ public class Arbitre implements IArbitre {
 		return this.adresse;
 	}
 
-	public void setCategorie(int c) {
+	public void setCategorie(CategorieArbitre c) {
 		// TODO Auto-generated method stub
 		this.categorie = c;
 	}
@@ -78,5 +80,22 @@ public class Arbitre implements IArbitre {
 		// TODO Auto-generated method stub
 		this.adresse = a;
 	}
+
+	public Ville getVille() {
+		return ville;
+	}
+
+	public void setVille(Ville ville) {
+		this.ville = ville;
+	}
+
+	public Disponibilites getDisp() {
+		return disp;
+	}
+
+	public void setDisp(Disponibilites disp) {
+		this.disp = disp;
+	}
+	
 
 }
