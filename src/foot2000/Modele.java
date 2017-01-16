@@ -3,54 +3,59 @@ package foot2000;
 import org.chocosolver.solver.Model;
 import org.chocosolver.solver.variables.IntVar;
 
+import Representation.Representation;
+
 /**
  * @author Fab
- * La Classe du modèle à partir duquel appeler les contraintes
+ * La Classe du modÃ¨le Ã  partir duquel appeler les contraintes
  */
 public class Modele {
-	// Le nombre d'Arbitres pour déterminer le domaine de valeurs des variables
-	private int nbArbitres;
-	
-	// Le nombre de matchs pour l'indexage des variables
-	private int nbMatchs;
-	
-	// Les constantes qui correspondent à la position de l'arbitre
+	// Les constantes qui correspondent Ã  la position de l'arbitre
 	public final static int ARBITRE_CENTRAL =0;
 	public final static int ARBITRE_TOUCHE1 =1;
 	public final static int ARBITRE_TOUCHE2 =2;
 	
-	// Variables à prédire par Choco
+	// Variables Ã  prÃ©dire par Choco
 	private IntVar[][] variables;
 	
-	// Le modèle qui contient les variables
+	// Le modÃ¨le qui contient les variables
 	private Model model;
 	
+	// Representation de la journée
+	private Representation rpz;
 	/**
 	 * Le Constructeur de la classe Contraintes
 	 * @param nbArbitres
 	 * @param nbMatchs
 	 */
-	public Modele(int nbArbitres,int nbMatchs){
-		this.nbArbitres = nbArbitres;
-		this.nbMatchs = nbMatchs;
-		// Création du modèle sous Choco
+	public Modele(Representation rpz){
+		this.rpz = rpz;
+		// CrÃ©ation du modÃ¨le sous Choco
 		this.model = new Model("One day problem");
-		// Création des variables et initialisation
-		this.variables = model.intVarMatrix( nbMatchs, 3, 0, nbArbitres);
+		// CrÃ©ation des variables et initialisation
+		this.variables = model.intVarMatrix( rpz.getNbMatchs(), 3, 0,rpz.getNbArbitres());
 	}	
 	
+
 	/**
-	 * @return Le model lié au problème
+	 * @return Le model liÃ© au problÃ¨me
 	 */
 	public Model getModele(){
 		return this.model;
 	}
 	
 	/**
-	 * @return Les contraintes du problème
+	 * @return Les contraintes du problÃ¨me
 	 */
 	public IntVar[][] getVars(){
 		return this.variables;
+	}
+	
+	/**
+	 * @return La representation des matchs et des arbitres
+	 */
+	public Representation getRepresentation(){
+		return this.rpz;
 	}
 
 }
