@@ -4,7 +4,7 @@ public interface IArbitre {
 	
 	//GETTER
 	int getCategorie();
-	String getArbitreID();
+	int getArbitreID();
 	String getClub();
 	String getNom();
 	String getPrenom();
@@ -12,7 +12,7 @@ public interface IArbitre {
 	
 	//SETTER
 	void setCategorie(int c);
-	void setArbitreID(String i);
+	void setArbitreID(int i);
 	void setClub(String c);
 	void setNom(String n);
 	void setPrenom(String p);
