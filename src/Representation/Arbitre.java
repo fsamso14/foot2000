@@ -84,5 +84,4 @@ public class Arbitre implements IArbitre {
 		// TODO Auto-generated method stub
 		this.adresse = a;
 	}
-
 }
