@@ -18,16 +18,16 @@ import jxl.read.biff.BiffException;
 public class LectureFichierExcel {
 
 
-	public static void main(String[] args) {
-		Workbook workbook = null;
+	public static void main(String[] args) throws BiffException, IOException {
+		/*Workbook workbook = null;
 		try {
 			/* Récupération du classeur Excel (en lecture) (!!!format xls !!!) */
-			workbook = Workbook.getWorkbook(new File("C:\\Users\\Mat\\Desktop\\Foot2000"
+			/*workbook = Workbook.getWorkbook(new File("C:\\Users\\Mat\\Desktop\\Foot2000"
 					+ "\\Projet Logiciel Désignations CDA EMN\\Annexes"
 					+ "\\Exemple Fichier Arbitres 2015 2016_2015 09 08.xls"));
 
 			/* Un fichier excel est composé de plusieurs feuilles, on y accède de la manière suivante*/
-			Sheet sheet = workbook.getSheet(0);
+			/*Sheet sheet = workbook.getSheet(0);
 
 
 			System.out.println("Données du fichier Excel :");
@@ -42,7 +42,7 @@ public class LectureFichierExcel {
 			System.out.println("Nb lignes :"+sheet.getRows());*/
 			
 
-		} 
+		/*} 
 		catch (BiffException e) {
 			e.printStackTrace();
 		} 
@@ -52,10 +52,17 @@ public class LectureFichierExcel {
 		finally {
 			if(workbook!=null){
 				/* On ferme le worbook pour libérer la mémoire */
-				workbook.close(); 
-			}
+			/*	workbook.close(); 
+			}*/
+			
+			CollecteurArbitre c= new CollecteurArbitre();
+			
+			System.out.println(c.getID_ArbitreCat("D2"));
 		}
-	}
+		
+		
+	
+	
 
 }
 
