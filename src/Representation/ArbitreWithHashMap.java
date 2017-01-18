@@ -21,10 +21,19 @@ public class ArbitreWithHashMap {
 		}
 	}
 
+	/**
+	 * Retourne l'arbitre ayant pour ID key
+	 * @param key
+	 * @return
+	 */
 	public Arbitre getArbitre(int key) {
 		return this.map.get(key);
 	}
 	
+	/**
+	 * Retourne la liste d'arbitreID
+	 * @return
+	 */
 	public Set<Integer> getAllArbitreID(){
 		return this.map.keySet();
 	}
