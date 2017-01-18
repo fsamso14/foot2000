@@ -44,5 +44,4 @@ public class ArbitreDisponibilite {
 		boolean avant = this.dispo.get(arbitreID);
 		this.dispo.replace(arbitreID, !avant);
 	}
-
 }

@@ -2,6 +2,8 @@ package Representation;
 public class Arbitre implements IArbitre {
 
 	private CategorieArbitre categorie;
+
+	//private int categorie;
 	private int arbitreID;
 	private String club;
 	private String nom;

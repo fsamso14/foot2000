@@ -5,24 +5,24 @@ import org.chocosolver.solver.variables.IntVar;
 
 /**
  * @author Fab
- * La Classe du modÃ¨le Ã  partir duquel appeler les contraintes
+ * La Classe du modèle à partir duquel appeler les contraintes
  */
 public class Modele {
-	// Le nombre d'Arbitres pour dÃ©terminer le domaine de valeurs des variables
+	// Le nombre d'Arbitres pour déterminer le domaine de valeurs des variables
 	private int nbArbitres;
 	
 	// Le nombre de matchs pour l'indexage des variables
 	private int nbMatchs;
 	
-	// Les constantes qui correspondent Ã  la position de l'arbitre
+	// Les constantes qui correspondent à la position de l'arbitre
 	public final static int ARBITRE_CENTRAL =0;
 	public final static int ARBITRE_TOUCHE1 =1;
 	public final static int ARBITRE_TOUCHE2 =2;
 	
-	// Variables Ã  prÃ©dire par Choco
+	// Variables à prédire par Choco
 	private IntVar[][] variables;
 	
-	// Le modÃ¨le qui contient les variables
+	// Le modèle qui contient les variables
 	private Model model;
 	
 	/**
@@ -33,21 +33,21 @@ public class Modele {
 	public Modele(int nbArbitres,int nbMatchs){
 		this.nbArbitres = nbArbitres;
 		this.nbMatchs = nbMatchs;
-		// CrÃ©ation du modÃ¨le sous Choco
+		// Création du modèle sous Choco
 		this.model = new Model("One day problem");
-		// CrÃ©ation des variables et initialisation
+		// Création des variables et initialisation
 		this.variables = model.intVarMatrix( nbMatchs, 3, 0, nbArbitres);
 	}	
 	
 	/**
-	 * @return Le model liÃ© au problÃ¨me
+	 * @return Le model lié au problème
 	 */
 	public Model getModele(){
 		return this.model;
 	}
 	
 	/**
-	 * @return Les contraintes du problÃ¨me
+	 * @return Les contraintes du problème
 	 */
 	public IntVar[][] getVars(){
 		return this.variables;
