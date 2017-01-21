@@ -8,7 +8,6 @@ public interface IArbitre {
 	String getClub();
 	String getNom();
 	String getPrenom();
-	String getAdresse();
 	
 	//SETTER
 	void setCategorie(CategorieArbitre c);
@@ -16,6 +15,4 @@ public interface IArbitre {
 	void setClub(String c);
 	void setNom(String n);
 	void setPrenom(String p);
-	void setAdresse(String a);
-	
 }
