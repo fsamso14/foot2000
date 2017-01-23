@@ -13,6 +13,8 @@ public class Arbitre implements IArbitre {
 
 	// private String adresse;
 	// private Ville ville;
+	
+	private boolean dispo;
 
 	// CONSTRUCTEUR
 	/*
@@ -61,6 +63,10 @@ public class Arbitre implements IArbitre {
 		// TODO Auto-generated method stub
 		return this.licence;
 	}
+	
+	public boolean getDispo(){
+		return this.dispo;
+	}
 
 	public void setCategorie(CategorieArbitre c) {
 		// TODO Auto-generated method stub
@@ -85,5 +91,9 @@ public class Arbitre implements IArbitre {
 	public void setPrenom(String p) {
 		// TODO Auto-generated method stub
 		this.prenom = p;
+	}
+	
+	public void setDispo(){
+		this.dispo = (!this.dispo);
 	}
 }
