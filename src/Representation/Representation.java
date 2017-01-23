@@ -1,5 +1,7 @@
 package Representation;
 
+import java.util.Date;
+
 public class Representation {
 	/** Jour de la saison */
 	public int day;
@@ -9,6 +11,8 @@ public class Representation {
 	
 	/** Liste des arbitres */
 	public Arbitre[] arbitres;
+	
+	public Date samedi;
 	
 	public int getNbMatchs(){
 		return matchs.length;
