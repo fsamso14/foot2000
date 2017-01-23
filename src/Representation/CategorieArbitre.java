@@ -10,6 +10,10 @@ public class CategorieArbitre {
 		this.kilometrage = kilometrage;
 		this.grade = grade;
 	}
+	
+	public int getGrade(){
+		return grade;
+	}
 
 	public int getGrade(){
 		return this.grade;

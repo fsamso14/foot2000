@@ -1,10 +1,9 @@
 package Representation;
 
-public class Arbitre implements IArbitre {
+public class Arbitre {
 
 	private CategorieArbitre categorie;
 
-	// private int categorie;
 	private int arbitreID;
 	private String licence;
 	private String club;
