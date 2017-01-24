@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import Representation.Arbitre;
+import Representation.CategorieArbitre;
 import jxl.Cell;
 import jxl.Sheet;
 import jxl.Workbook;
@@ -21,11 +23,11 @@ import jxl.read.biff.BiffException;
 public class CollecteurArbitre {
 
 	Workbook workbook;
-	// String adresseFichierArbitre="C:\\Users\\Mat\\Desktop\\Projets\\Foot2000"
-	// + "\\Projet Logiciel Dï¿½signations CDA EMN\\Annexes"
-	// + "\\Exemple Fichier Arbitres 2015 2016_2015 09 08.xls";
+	 String adresseFichierArbitre="C:\\Users\\Mat\\Desktop\\Projets\\Foot2000"
+	 + "\\Projet Logiciel Désignations CDA EMN\\Annexes"
+	 + "\\Exemple Fichier Arbitres 2015 2016_2015 09 08.xls";
 
-	String adresseFichierArbitre = "/Users/thaianthantrong/Documents/A3/Projet d'Option/Projet Logiciel DeÌ�signations CDA EMN/Annexes/Exemple Fichier Arbitres 2015 2016_2015 09 08.xlsx";
+	//String adresseFichierArbitre = "/Users/thaianthantrong/Documents/A3/Projet d'Option/Projet Logiciel DeÌ�signations CDA EMN/Annexes/Exemple Fichier Arbitres 2015 2016_2015 09 08.xlsx";
 
 	public CollecteurArbitre() throws BiffException, IOException {
 		this.workbook = Workbook.getWorkbook(new File(adresseFichierArbitre));
@@ -112,6 +114,7 @@ public class CollecteurArbitre {
 		ArrayList<String> arbitreCat = new ArrayList<String>();
 		CollecteurArbitre collecteur = new CollecteurArbitre();
 		Sheet sheet = collecteur.getWorkbook().getSheet(0);
+		
 		for (int i = 1; i < sheet.getRows(); i++) {
 			Cell catego = sheet.getCell(1, i);
 			String categorie = catego.getContents();
@@ -123,13 +126,42 @@ public class CollecteurArbitre {
 		return arbitreCat;
 	}
 	
+	public HashMap<Integer,Arbitre> getArbitres() throws BiffException, IOException{
+		HashMap<Integer, Arbitre> arbitres = new HashMap<Integer, Arbitre>();
+		CollecteurArbitre collecteur = new CollecteurArbitre();
+		
+		Sheet sheet = collecteur.getWorkbook().getSheet(0);
+		int k = 1;
+		for (int j = 1; j < sheet.getRows(); j++) {
+			
+			String nomCat= sheet.getCell(1,j).getContents();
+			String licence = sheet.getCell(2,j).getContents();
+			String club= sheet.getCell(4,j).getContents();
+			String nom= sheet.getCell(6,j).getContents();
+			String prenom= sheet.getCell(7,j).getContents();
+			
+			if (!licence.isEmpty()) {
+				CategorieArbitre cat= new CategorieArbitre(nomCat,40,3);
+				Arbitre arbitre=new Arbitre(cat,k,licence,club,nom,prenom);
+				arbitres.put(k, arbitre);
+				k++;
+			}
+		}
+
+		collecteur.getWorkbook().close();
+		
+		return arbitres;	
+	}
+	
 	
 
 	public static void main(String[] args) throws BiffException, IOException {
 
 		CollecteurArbitre c = new CollecteurArbitre();
-		System.out.println();
-		System.out.println(c.getID_ArbitreCat("D2"));
+		
+			System.out.println(c.getArbitres().size());
+		
+		
 
 		// System.out.println("Nb d'arbitres "+c.listID().size());
 
