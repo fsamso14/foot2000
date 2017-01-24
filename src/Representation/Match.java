@@ -6,7 +6,6 @@ public class Match {
 	
 	private Equipe receveuse;
 	private Equipe visiteuse;
-	private Ville ville;
 	private int categorie;
 	private int id_match;
 	
