@@ -6,14 +6,13 @@ public class Arbitre {
 
 	private int arbitreID;
 	private String licence;
-	private String club;
 	private String nom;
 	private String prenom;
 
 	// private String adresse;
-	private Ville ville;
+	private Club club;
 	
-	private boolean dispo;
+	private ArbitreDisponibilite disponibilites;
 
 	// CONSTRUCTEUR
 	/*
@@ -23,15 +22,15 @@ public class Arbitre {
 	 * nom; this.prenom = prenom; this.adresse = adresse; this.ville = ville; }
 	 */
 
-	public Arbitre(CategorieArbitre categorie, int arbitreID, String licence,
-			String club, String nom, String prenom,Ville v) {
+	public Arbitre(CategorieArbitre categorie, int arbitreID, String licence, String nom, String prenom,Club club) {
 		this.categorie = categorie;
 		this.arbitreID = arbitreID;
 		this.licence = licence;
 		this.club = club;
 		this.nom = nom;
 		this.prenom = prenom;
-		//this.ville=v;
+
+		this.disponibilites = new ArbitreDisponibilite();
 	}
 
 	public CategorieArbitre getCategorie() {
@@ -44,7 +43,7 @@ public class Arbitre {
 		return this.arbitreID;
 	}
 
-	public String getClub() {
+	public Club getClub() {
 		// TODO Auto-generated method stub
 		return this.club;
 	}
@@ -64,8 +63,11 @@ public class Arbitre {
 		return this.licence;
 	}
 	
-	public boolean getDispo(){
-		return this.dispo;
+	public boolean getDispo(int jour){
+		return this.disponibilites.disponible(jour);
+	}
+	public void setDispo(boolean dispo,int jour){
+		this.disponibilites.setDispo(dispo, jour);
 	}
 
 	public void setCategorie(CategorieArbitre c) {
@@ -78,7 +80,7 @@ public class Arbitre {
 		this.arbitreID = i;
 	}
 
-	public void setClub(String c) {
+	public void setClub(Club c) {
 		// TODO Auto-generated method stub
 		this.club = c;
 	}
@@ -93,10 +95,4 @@ public class Arbitre {
 		this.prenom = p;
 	}
 	
-	public void setDispo(){
-		this.dispo = (!this.dispo);
-	}
-	public Ville getVille(){
-		return this.getVille();
-	}
 }
