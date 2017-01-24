@@ -1,13 +1,12 @@
 package Contraintes;
 
+import Representation.Representation;
 import foot2000.Modele;
 
 public class ContrainteSurGrade implements Contrainte{
 
 	public void ajout_contrainte(Modele mod) {
-<<<<<<< HEAD
 		// TODO Auto-generated method stub
-=======
 		Representation journee = mod.getRepresentation();
 		int nbMatchs = journee.getNbMatchs();
 		int nbArbitres = journee.getNbArbitres();
@@ -22,7 +21,6 @@ public class ContrainteSurGrade implements Contrainte{
 				}
 			}
 		}
->>>>>>> refs/heads/contraintes_fabian2
 		
 	}
 

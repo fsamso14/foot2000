@@ -7,18 +7,14 @@ public class Representation {
 	public int day;
 	
 	/** Liste des matchs � faire */
-	//public Match[] matchs;
+	public Match[] matchs;
 	
 	/** Liste des arbitres */
 	public Arbitre[] arbitres;
 	
-<<<<<<< HEAD
-	/*public int getNbMatchs(){
-=======
 	public Date samedi;
 	
 	public int getNbMatchs(){
->>>>>>> refs/heads/contraintes_fabian2
 		return matchs.length;
 	}
 	public int getNbArbitres(){
@@ -29,5 +25,5 @@ public class Representation {
 	}
 	public Match getMatch(int i){
 		return this.matchs[i];
-	}*/
+	}
 }

@@ -11,7 +11,7 @@ public class Arbitre {
 	private String prenom;
 
 	// private String adresse;
-	// private Ville ville;
+	private Ville ville;
 	
 	private boolean dispo;
 
@@ -24,13 +24,14 @@ public class Arbitre {
 	 */
 
 	public Arbitre(CategorieArbitre categorie, int arbitreID, String licence,
-			String club, String nom, String prenom) {
+			String club, String nom, String prenom,Ville v) {
 		this.categorie = categorie;
 		this.arbitreID = arbitreID;
 		this.licence = licence;
 		this.club = club;
 		this.nom = nom;
 		this.prenom = prenom;
+		this.ville=v;
 	}
 
 	public CategorieArbitre getCategorie() {
@@ -94,5 +95,8 @@ public class Arbitre {
 	
 	public void setDispo(){
 		this.dispo = (!this.dispo);
+	}
+	public Ville getVille(){
+		return this.getVille();
 	}
 }

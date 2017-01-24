@@ -3,6 +3,8 @@ package foot2000;
 import org.chocosolver.solver.Model;
 import org.chocosolver.solver.variables.IntVar;
 
+import Representation.Representation;
+
 /**
  * @author Fab
  * La Classe du modèle à partir duquel appeler les contraintes
@@ -21,7 +23,7 @@ public class Modele {
 	
 	// Variables à prédire par Choco
 	private IntVar[][] variables;
-	
+	private Representation rpz;
 	// Le modèle qui contient les variables
 	private Model model;
 	
@@ -30,9 +32,10 @@ public class Modele {
 	 * @param nbArbitres
 	 * @param nbMatchs
 	 */
-	public Modele(int nbArbitres,int nbMatchs){
-		this.nbArbitres = nbArbitres;
-		this.nbMatchs = nbMatchs;
+	public Modele(Representation rpz){
+		this.rpz=rpz;
+		this.nbArbitres = rpz.getNbArbitres();
+		this.nbMatchs = rpz.getNbMatchs();
 		// Création du modèle sous Choco
 		this.model = new Model("One day problem");
 		// Création des variables et initialisation
