@@ -33,4 +33,6 @@ public class CollecteurDisponibilitesArbitre {
 	public void setAdresseFichierArbitre(String adresseFichierArbitre) {
 		this.adresseFichierArbitre = adresseFichierArbitre;
 	}
+	
+	
 }

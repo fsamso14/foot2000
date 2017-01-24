@@ -11,8 +11,8 @@ import jxl.Workbook;
 import jxl.read.biff.BiffException;
 
 /**
- * Classe collectant les donn�es pertinentes dans les fichiers Excel appropri�s
- * afin de r�soudre le probl�me
+ * Classe collectant les donnï¿½es pertinentes dans les fichiers Excel appropriï¿½s
+ * afin de rï¿½soudre le problï¿½me
  * 
  * @author Mat
  *
@@ -22,10 +22,10 @@ public class CollecteurArbitre {
 
 	Workbook workbook;
 	// String adresseFichierArbitre="C:\\Users\\Mat\\Desktop\\Projets\\Foot2000"
-	// + "\\Projet Logiciel D�signations CDA EMN\\Annexes"
+	// + "\\Projet Logiciel Dï¿½signations CDA EMN\\Annexes"
 	// + "\\Exemple Fichier Arbitres 2015 2016_2015 09 08.xls";
 
-	String adresseFichierArbitre = "/Users/thaianthantrong/Documents/A3/Projet d'Option/Projet Logiciel Désignations CDA EMN/Annexes/Exemple Fichier Arbitres 2015 2016_2015 09 08.xlsx";
+	String adresseFichierArbitre = "/Users/thaianthantrong/Documents/A3/Projet d'Option/Projet Logiciel DeÌ�signations CDA EMN/Annexes/Exemple Fichier Arbitres 2015 2016_2015 09 08.xlsx";
 
 	public CollecteurArbitre() throws BiffException, IOException {
 		this.workbook = Workbook.getWorkbook(new File(adresseFichierArbitre));
@@ -49,11 +49,12 @@ public class CollecteurArbitre {
 
 	/**
 	 * 
-	 * @return liste des correspondances entre les num�ros de licence et les ID
+	 * @return liste des correspondances entre les numï¿½ros de licence et les ID
 	 *         des arbitres
 	 * @throws BiffException
 	 * @throws IOException
 	 */
+
 	public HashMap<String, Integer> listLicence_ID() throws BiffException,
 			IOException {
 		HashMap<String, Integer> l = new HashMap<String, Integer>();
@@ -76,7 +77,7 @@ public class CollecteurArbitre {
 	/**
 	 * 
 	 * 
-	 * @return Dictionnaire des arbitres et de leur num�ro de licence
+	 * @return Dictionnaire des arbitres et de leur numï¿½ro de licence
 	 * @throws BiffException
 	 * @throws IOException
 	 */
@@ -101,8 +102,8 @@ public class CollecteurArbitre {
 
 	/**
 	 * @param cat
-	 *            �gorie de l'arbitre D1, D2 ...
-	 * @return liste des identifiants des arbitres de la cat�gorie souhait�e
+	 *            ï¿½gorie de l'arbitre D1, D2 ...
+	 * @return liste des identifiants des arbitres de la catï¿½gorie souhaitï¿½e
 	 * @throws BiffException
 	 * @throws IOException
 	 */
@@ -121,11 +122,15 @@ public class CollecteurArbitre {
 		collecteur.getWorkbook().close();
 		return arbitreCat;
 	}
+	
+	
 
 	public static void main(String[] args) throws BiffException, IOException {
+
 		CollecteurArbitre c = new CollecteurArbitre();
 		System.out.println();
 		System.out.println(c.getID_ArbitreCat("D2"));
+
 		// System.out.println("Nb d'arbitres "+c.listID().size());
 
 	}
