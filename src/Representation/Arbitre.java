@@ -29,7 +29,7 @@ public class Arbitre {
 		this.club = club;
 		this.nom = nom;
 		this.prenom = prenom;
-
+		//this.ville=v;
 		this.disponibilites = new ArbitreDisponibilite();
 	}
 
