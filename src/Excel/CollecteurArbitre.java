@@ -50,7 +50,7 @@ public class CollecteurArbitre {
 	 * @throws BiffException
 	 * @throws IOException
 	 */
-	public HashMap<String,Integer> listLicence_ID() throws BiffException, IOException{
+	public HashMap<String,Integer> getLicence_ID() throws BiffException, IOException{
 		HashMap<String,Integer> l=new HashMap<String,Integer>();
 		CollecteurArbitre collecteur=new CollecteurArbitre();
 
@@ -115,13 +115,15 @@ public class CollecteurArbitre {
 		collecteur.getWorkbook().close(); 
 		return arbitreCat;
 	}
+	
+	
 
 
 	public static void main(String[] args) throws BiffException, IOException {
 		CollecteurArbitre c=new CollecteurArbitre();
-		System.out.println();
 		System.out.println(c.getID_ArbitreCat("D2"));
-		//System.out.println("Nb d'arbitres "+c.listID().size());
+		//System.out.println(c.getNomArbitre_License());
+		//System.out.println("Nb d'arbitres "+c.getNomArbitre_License().size());
 
 	}
 
