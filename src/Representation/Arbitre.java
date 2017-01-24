@@ -1,25 +1,39 @@
 package Representation;
-public class Arbitre implements IArbitre {
 
-	private int categorie;
+public class Arbitre {
+
+	private CategorieArbitre categorie;
+
 	private int arbitreID;
+	private String licence;
 	private String club;
 	private String nom;
 	private String prenom;
-	private String adresse;
+
+	// private String adresse;
+	// private Ville ville;
+	
+	private boolean dispo;
 
 	// CONSTRUCTEUR
-	public Arbitre(int categorie, int arbitreID, String club,
-			String nom, String prenom, String adresse) {
+	/*
+	 * public Arbitre(CategorieArbitre categorie, int arbitreID, String club,
+	 * String nom, String prenom, String adresse, Ville ville) { this.categorie
+	 * = categorie; this.arbitreID = arbitreID; this.club = club; this.nom =
+	 * nom; this.prenom = prenom; this.adresse = adresse; this.ville = ville; }
+	 */
+
+	public Arbitre(CategorieArbitre categorie, int arbitreID, String licence,
+			String club, String nom, String prenom) {
 		this.categorie = categorie;
 		this.arbitreID = arbitreID;
+		this.licence = licence;
 		this.club = club;
 		this.nom = nom;
 		this.prenom = prenom;
-		this.adresse = adresse;
 	}
 
-	public int getCategorie() {
+	public CategorieArbitre getCategorie() {
 		// TODO Auto-generated method stub
 		return this.categorie;
 	}
@@ -44,12 +58,16 @@ public class Arbitre implements IArbitre {
 		return this.prenom;
 	}
 
-	public String getAdresse() {
+	public String getLicence() {
 		// TODO Auto-generated method stub
-		return this.adresse;
+		return this.licence;
+	}
+	
+	public boolean getDispo(){
+		return this.dispo;
 	}
 
-	public void setCategorie(int c) {
+	public void setCategorie(CategorieArbitre c) {
 		// TODO Auto-generated method stub
 		this.categorie = c;
 	}
@@ -73,10 +91,8 @@ public class Arbitre implements IArbitre {
 		// TODO Auto-generated method stub
 		this.prenom = p;
 	}
-
-	public void setAdresse(String a) {
-		// TODO Auto-generated method stub
-		this.adresse = a;
+	
+	public void setDispo(){
+		this.dispo = (!this.dispo);
 	}
-
 }

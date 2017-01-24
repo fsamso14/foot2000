@@ -53,4 +53,29 @@ public class Modele {
 		return this.variables;
 	}
 
+	
+	/**
+	 * @return La representation des matchs et des arbitres
+	 */
+	public Representation getRepresentation(){
+		return this.rpz;
+	} 
+	
+	/**
+	 * 
+	 * @return Les variables sous forme de liste
+	 */
+	
+	public IntVar[] getVarsAsArray(){
+		IntVar[] aRet = new IntVar[rpz.getNbArbitres()*3];
+		int k =0;
+		for(int i = 0 ; i < rpz.getNbArbitres(); i ++){
+			for(int j = 0 ; j < 3; j++){
+				aRet[k] =  this.getVars()[i][j];
+				k++;
+			}
+		}
+		return aRet;
+	}
+
 }

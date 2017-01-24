@@ -3,12 +3,22 @@ public class CategorieArbitre {
 
 	private String nomCategorie;
 	private int kilometrage;
+	private int grade;
 
-	public CategorieArbitre(String nomCategorie, int kilometrage) {
+	public CategorieArbitre(String nomCategorie, int kilometrage, int grade) {
 		this.nomCategorie = nomCategorie;
 		this.kilometrage = kilometrage;
+		this.grade = grade;
+	}
+	
+	public int getGrade(){
+		return grade;
 	}
 
+	public int getGrade(){
+		return this.grade;
+	}
+	
 	public String getNomCategorie() {
 		return this.nomCategorie;
 	}
