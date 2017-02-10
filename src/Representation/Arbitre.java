@@ -22,7 +22,7 @@ public class Arbitre {
 	 * nom; this.prenom = prenom; this.adresse = adresse; this.ville = ville; }
 	 */
 
-	public Arbitre(CategorieArbitre categorie, int arbitreID, String licence, String nom, String prenom,Club club) {
+	public Arbitre(CategorieArbitre categorie, int arbitreID, String licence, String nom, String prenom,Club club,ArbitreDisponibilite disponibilites) {
 		this.categorie = categorie;
 		this.arbitreID = arbitreID;
 		this.licence = licence;
@@ -30,7 +30,7 @@ public class Arbitre {
 		this.nom = nom;
 		this.prenom = prenom;
 
-		this.disponibilites = new ArbitreDisponibilite();
+		this.disponibilites = disponibilites;
 	}
 
 	public CategorieArbitre getCategorie() {

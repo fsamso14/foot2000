@@ -4,26 +4,28 @@ import java.util.UUID;
 
 public class Match {
 	
-	private Equipe receveuse;
-	private Equipe visiteuse;
+	private Club receveuse;
+	private Club visiteuse;
 	private int categorie;
 	private int id_match;
+	private String numMatch;
 	
-	public Match(Equipe receveuse, Equipe visiteuse,
+	public Match(String numMatch,Club receveuse, Club visiteuse,
 			int categorie) throws Exception {
 		if (receveuse.equals(visiteuse)) {
 			throw new Exception("Erreur dans la construction du Match !");
 		}
+		this.numMatch=numMatch;
 		this.receveuse = receveuse;
 		this.visiteuse = visiteuse;
 		this.categorie = categorie;
 	}
 	
-	public Equipe getReceveuse(){
+	public Club getReceveuse(){
 		return this.receveuse;
 	}
 	
-	public Equipe getVisiteuse(){
+	public Club getVisiteuse(){
 		return this.visiteuse;
 	}
 	

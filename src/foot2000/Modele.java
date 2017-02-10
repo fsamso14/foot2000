@@ -1,6 +1,7 @@
 package foot2000;
 
 import org.chocosolver.solver.Model;
+
 import org.chocosolver.solver.variables.IntVar;
 
 import Representation.Representation;
