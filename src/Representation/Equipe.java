@@ -7,8 +7,8 @@ public class Equipe {
 	private Club club;
 	
 	public Equipe(String nomEquipe, int categorieEquipe, Club club){
-		this.nomEquipe = nomEquipe;
-		this.categorieEquipe = categorieEquipe;
+		//this.nomEquipe = nomEquipe;
+		//this.categorieEquipe = categorieEquipe;
 		this.club=club;
 	}
 
