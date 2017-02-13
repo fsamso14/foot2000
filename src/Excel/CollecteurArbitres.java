@@ -115,7 +115,7 @@ public class CollecteurArbitres implements Collecteur{
 					 arbitre=new Arbitre(cat,k,licence,nom,prenom,club,dispos.get(licence));
 				}
 				else{
-					ArbitreDisponibilite ad=new ArbitreDisponibilite(true,true,true,true);
+					ArbitreDisponibilite ad=new ArbitreDisponibilite(true,true,true,true,true,true,true);
 					 arbitre=new Arbitre(cat,k,licence,nom,prenom,club,ad);
 				}
 				
