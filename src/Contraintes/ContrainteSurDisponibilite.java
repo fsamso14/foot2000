@@ -5,6 +5,11 @@ import foot2000.Modele;
 
 public class ContrainteSurDisponibilite implements Contrainte{
 
+	public ContrainteSurDisponibilite() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	@Override
 	public void ajout_contrainte(Modele mod) {
 		Representation journee = mod.getRepresentation();

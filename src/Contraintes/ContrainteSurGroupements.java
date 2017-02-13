@@ -5,6 +5,11 @@ import foot2000.Modele;
 
 public class ContrainteSurGroupements implements Contrainte{
 
+	public ContrainteSurGroupements() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	@Override
 	public void ajout_contrainte(Modele mod) {
 		Representation journee = mod.getRepresentation();

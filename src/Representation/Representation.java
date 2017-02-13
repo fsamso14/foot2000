@@ -82,8 +82,8 @@ public class Representation {
 	
 	public static void main(String[] args) throws Exception {
 		Representation r=new Representation();
-		/*System.out.println(r.getArbitre(32).getNom());
+		System.out.println(r.getArbitre(32).getNom());
 		System.out.println(r.distances().get(r.getArbitre(1).getClub().getId())
-				.get(r.getMatch(2).getReceveuse().getId()));*/
+				.get(r.getMatch(2).getReceveuse().getId()));
 	}
 }
