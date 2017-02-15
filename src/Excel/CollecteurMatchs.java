@@ -25,7 +25,7 @@ import jxl.read.biff.BiffException;
 public class CollecteurMatchs implements Collecteur{
 
 	Workbook workbook;
-	static String adresseFichier = "C:\\Users\\Fab\\Desktop\\FakeTest\\Matchs.xls";
+	public	static String adresseFichier = "C:\\Users\\Fab\\Desktop\\FakeTest\\Matchs.xls";
 
 
 	/*+ "Projet Logiciel Désignations CDA EMN\\Annexes\\"

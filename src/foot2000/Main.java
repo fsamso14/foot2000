@@ -17,51 +17,49 @@ import Representation.Match;
 import Representation.Representation;
 
 public class Main {
-	public static void run(){
-		try {
-			Modele mod = new Modele(new Representation());
-			ContrainteAllDiffs c1 = new ContrainteAllDiffs();
-			ContrainteSurDistance c2 = new ContrainteSurDistance();
-			ContrainteSurGrade c3 = new ContrainteSurGrade();
-			ContrainteSurGroupements c4 = new ContrainteSurGroupements();
-			ContrainteSurDisponibilite c5 = new ContrainteSurDisponibilite();
-			ObjectiveFunction obj = new ObjectiveFunction();
-			c1.ajout_contrainte(mod);
-			c2.ajout_contrainte(mod);
-			c3.ajout_contrainte(mod);
-			c4.ajout_contrainte(mod);
-			obj.ajout_contrainte(mod);
-			//System.out.println(mod.getModele().getSolver().solve());
-			mod.getModele().getSolver().findOptimalSolution(mod.getNombreZeros(), Model.MINIMIZE, new TimeCounter(mod.getModele(),(long) 30000000000.0));
-			//mod.getModele().getSolver().findAllSolutions();
-			//mod.getModele().getSolver().showStatistics();
-			finalInstantiation(mod);
-			ecritureResultat(mod);
-			for(IntVar x : mod.getVarsAsArray()){
-				System.out.println(x+" : "+x.getValue());	
-			}
-		} catch (Exception e) {
-			System.out.println("Impossible de charger la représentation");
-			e.printStackTrace();
+	public static void run() throws Exception {
+
+		Modele mod = new Modele(new Representation());
+		ContrainteAllDiffs c1 = new ContrainteAllDiffs();
+		ContrainteSurDistance c2 = new ContrainteSurDistance();
+		ContrainteSurGrade c3 = new ContrainteSurGrade();
+		ContrainteSurGroupements c4 = new ContrainteSurGroupements();
+		ContrainteSurDisponibilite c5 = new ContrainteSurDisponibilite();
+		ObjectiveFunction obj = new ObjectiveFunction();
+		c1.ajout_contrainte(mod);
+		c2.ajout_contrainte(mod);
+		c3.ajout_contrainte(mod);
+		c4.ajout_contrainte(mod);
+		obj.ajout_contrainte(mod);
+		// System.out.println(mod.getModele().getSolver().solve());
+		mod.getModele()
+				.getSolver()
+				.findOptimalSolution(mod.getNombreZeros(), Model.MINIMIZE,
+						new TimeCounter(mod.getModele(), (long) 30000000000.0));
+		// mod.getModele().getSolver().findAllSolutions();
+		// mod.getModele().getSolver().showStatistics();
+		finalInstantiation(mod);
+		ecritureResultat(mod);
+		for (IntVar x : mod.getVarsAsArray()) {
+			System.out.println(x + " : " + x.getValue());
 		}
+
 	}
-	
-	public static void ecritureResultat(Modele mod){
+
+	public static void ecritureResultat(Modele mod) {
 		Representation rep = mod.getRepresentation();
 		ArrayList<Integer> forbiddens = new ArrayList<Integer>();
-		for(int i = 1 ; i < rep.getNbMatchs() + 1 ; i++){
+		for (int i = 1; i < rep.getNbMatchs() + 1; i++) {
 			Match m = rep.getMatch(i);
-			for(int j = 0 ; j < 3 ; j++){
-				IntVar var = mod.getVars()[i-1][j];
-				if(var.isInstantiated()){
-					if(var.getValue()==0){
+			for (int j = 0; j < 3; j++) {
+				IntVar var = mod.getVars()[i - 1][j];
+				if (var.isInstantiated()) {
+					if (var.getValue() == 0) {
 						m.setArbitre(null, j);
+					} else {
+						m.setArbitre(rep.getArbitre(var.getValue()), j);
 					}
-					else{
-						m.setArbitre(rep.getArbitre(var.getValue()),j);
-					}
-				}
-				else{
+				} else {
 					try {
 						var.instantiateTo(0, null);
 					} catch (ContradictionException e) {
@@ -72,26 +70,26 @@ public class Main {
 				}
 			}
 		}
-		
+
 	}
-	public static void finalInstantiation(Modele mod){
+
+	public static void finalInstantiation(Modele mod) {
 		Representation rep = mod.getRepresentation();
 		ArrayList<Integer> forbiddens = new ArrayList<Integer>();
-		for(int i = 1 ; i < rep.getNbMatchs() + 1 ; i++){
-			for(int j = 0 ; j < 3 ; j++){
-				IntVar var = mod.getVars()[i-1][j];
-				if(var.isInstantiated()){}
-				else{
+		for (int i = 1; i < rep.getNbMatchs() + 1; i++) {
+			for (int j = 0; j < 3; j++) {
+				IntVar var = mod.getVars()[i - 1][j];
+				if (var.isInstantiated()) {
+				} else {
 					try {
 						int value = 0;
 						boolean instantiate = false;
-						while(value < Integer.MAX_VALUE && !instantiate){
-							if(!forbiddens.contains(var.nextValue(value))){
-								var.instantiateTo(var.nextValue(value),null);
+						while (value < Integer.MAX_VALUE && !instantiate) {
+							if (!forbiddens.contains(var.nextValue(value))) {
+								var.instantiateTo(var.nextValue(value), null);
 								forbiddens.add(var.getValue());
 								instantiate = true;
-							}
-							else{
+							} else {
 								value = var.nextValue(value);
 							}
 						}
@@ -104,7 +102,8 @@ public class Main {
 			}
 		}
 	}
-	public static void main(String[] args) {
+
+	public static void main(String[] args) throws Exception {
 		run();
 	}
 }
