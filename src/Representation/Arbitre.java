@@ -29,13 +29,10 @@ public class Arbitre {
 		this.club = club;
 		this.nom = nom;
 		this.prenom = prenom;
-<<<<<<< HEAD
+
 		//this.ville=v;
 		this.disponibilites = new ArbitreDisponibilite();
-=======
 
-		this.disponibilites = disponibilites;
->>>>>>> branch 'master' of https://github.com/fsamso14/foot2000.git
 	}
 
 	public CategorieArbitre getCategorie() {
