@@ -1,4 +1,4 @@
-package Script;
+package foot2000;
 
 import java.util.ArrayList;
 
@@ -15,9 +15,8 @@ import Contraintes.ContrainteSurGroupements;
 import Contraintes.ObjectiveFunction;
 import Representation.Match;
 import Representation.Representation;
-import foot2000.Modele;
 
-public class Script {
+public class Main {
 	public static void run(){
 		try {
 			Modele mod = new Modele(new Representation());
