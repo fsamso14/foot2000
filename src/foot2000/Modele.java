@@ -1,6 +1,7 @@
 package foot2000;
 
 import org.chocosolver.solver.Model;
+
 import org.chocosolver.solver.variables.IntVar;
 
 import Representation.Representation;
@@ -26,6 +27,7 @@ public class Modele {
 	private Representation rpz;
 	// Le modèle qui contient les variables
 	private Model model;
+	private IntVar nombreZeros;
 	
 	/**
 	 * Le Constructeur de la classe Contraintes
@@ -40,6 +42,7 @@ public class Modele {
 		this.model = new Model("One day problem");
 		// Création des variables et initialisation
 		this.variables = model.intVarMatrix( nbMatchs, 3, 0, nbArbitres);
+		nombreZeros = model.intVar(0,rpz.getNbMatchs()*3);
 	}	
 	
 	/**
@@ -70,9 +73,9 @@ public class Modele {
 	 */
 	
 	public IntVar[] getVarsAsArray(){
-		IntVar[] aRet = new IntVar[rpz.getNbArbitres()*3];
+		IntVar[] aRet = new IntVar[rpz.getNbMatchs()*3];
 		int k =0;
-		for(int i = 0 ; i < rpz.getNbArbitres(); i ++){
+		for(int i = 0 ; i < rpz.getNbMatchs(); i ++){
 			for(int j = 0 ; j < 3; j++){
 				aRet[k] =  this.getVars()[i][j];
 				k++;
@@ -80,5 +83,14 @@ public class Modele {
 		}
 		return aRet;
 	}
+
+	public IntVar getNombreZeros() {
+		return nombreZeros;
+	}
+
+	public void setNombreZeros(IntVar nombreZeros) {
+		this.nombreZeros = nombreZeros;
+	}
+	
 
 }
