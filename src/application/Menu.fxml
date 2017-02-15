@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="698.0" prefWidth="824.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MenuController">
+	<children>
+		<Label layoutX="76.0" layoutY="14.0" prefHeight="25.0" prefWidth="453.0" text="Désignation Arbitres" textAlignment="CENTER">
+			<font>
+				<Font name="Bookman Old Style" size="38.0" />
+			</font>
+		</Label>
+		<Button fx:id="fileSelectArbitres" layoutX="14.0" layoutY="213.0" mnemonicParsing="false" onAction="#fileSelectArbitres" prefHeight="39.0" prefWidth="206.0" text="Arbitres :">
+			<font>
+				<Font name="Bookman Old Style Bold" size="18.0" />
+			</font>
+		</Button>
+		<Button fx:id="entrer" layoutX="343.0" layoutY="651.0" mnemonicParsing="false" onAction="#handleEntrer" text="Entrer">
+			<font>
+				<Font name="Bookman Old Style Bold" size="18.0" />
+			</font>
+		</Button>
+		<ImageView id="imageView" fx:id="imageView" fitHeight="119.0" fitWidth="180.0" layoutX="644.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" />
+		<Button fx:id="notice" layoutX="786.0" layoutY="656.0" mnemonicParsing="false" onAction="#openNotice" text="?">
+			<font>
+				<Font name="Bookman Old Style Bold" size="12.0" />
+			</font>
+		</Button>
+		<Button fx:id="fileSelectClubs" layoutX="14.0" layoutY="444.0" mnemonicParsing="false" onAction="#fileSelectClubs" prefHeight="39.0" prefWidth="206.0" text="Clubs :">
+			<font>
+				<Font name="Bookman Old Style Bold" size="18.0" />
+			</font>
+		</Button>
+		<Button fx:id="fileSelectMatchs" layoutX="14.0" layoutY="287.0" mnemonicParsing="false" onAction="#fileSelectMatchs" prefHeight="39.0" prefWidth="206.0" text="Matchs :">
+			<font>
+				<Font name="Bookman Old Style Bold" size="18.0" />
+			</font>
+		</Button>
+		<Button fx:id="reinitialiser" layoutX="14.0" layoutY="651.0" mnemonicParsing="false" onAction="#reinitialize" text="Réinitialiser">
+			<font>
+				<Font name="Bookman Old Style Bold" size="18.0" />
+			</font>
+		</Button>
+		<TextField fx:id="labelArbitre" layoutX="237.0" layoutY="220.0" prefHeight="25.0" prefWidth="453.0" visible="false" />
+		<TextField fx:id="labelGroupements" layoutX="237.0" layoutY="369.0" prefHeight="25.0" prefWidth="453.0" visible="false" />
+		<TextField fx:id="labelMatchs" layoutX="237.0" layoutY="294.0" prefHeight="25.0" prefWidth="453.0" visible="false" />
+      <Button fx:id="fileSelectGroupements" layoutX="14.0" layoutY="362.0" mnemonicParsing="false" onAction="#fileSelectGroupements" prefHeight="39.0" prefWidth="206.0" text="Groupements :">
+         <font>
+            <Font name="Bookman Old Style Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="fileSelectIndispo" layoutX="14.0" layoutY="524.0" mnemonicParsing="false" onAction="#fileSelectIndispo" prefHeight="39.0" prefWidth="206.0" text="Indisponibilités :">
+         <font>
+            <Font name="Bookman Old Style Bold" size="18.0" />
+         </font>
+      </Button>
+      <TextField fx:id="labelClubs" layoutX="237.0" layoutY="451.0" prefHeight="25.0" prefWidth="453.0" visible="false" />
+      <TextField fx:id="labelIndispo" layoutX="237.0" layoutY="531.0" prefHeight="25.0" prefWidth="453.0" visible="false" />
+	</children>
+</AnchorPane>

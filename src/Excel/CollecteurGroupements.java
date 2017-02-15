@@ -14,7 +14,7 @@ import jxl.read.biff.BiffException;
 public class CollecteurGroupements implements Collecteur{
 
 	Workbook workbook;
-	static String adresseFichier = "C:\\Users\\Fab\\Desktop\\FakeTest\\Liste des groupements.xls";
+	public	static String adresseFichier = "C:\\Users\\Fab\\Desktop\\FakeTest\\Liste des groupements.xls";
 
 	//String adresseFichierArbitre = "/Users/thaianthantrong/Documents/A3/Projet d'Option/Projet Logiciel DeÌ�signations CDA EMN/Annexes/Exemple Fichier Arbitres 2015 2016_2015 09 08.xlsx";
 
