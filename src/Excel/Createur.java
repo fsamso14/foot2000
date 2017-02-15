@@ -2,6 +2,7 @@ package Excel;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Calendar;
 
 import jxl.Cell;
 import jxl.Workbook;
@@ -19,6 +20,7 @@ import jxl.write.biff.RowsExceededException;
  */
 public class Createur {
 	
+	static String adresseFichier;
 	static WritableWorkbook workbook;
 	//String adresseFichier;
 	
@@ -28,9 +30,8 @@ public class Createur {
 	
 	public static void ecritureFichierExcel() throws BiffException, IOException, RowsExceededException, WriteException, IndexOutOfBoundsException{
 		CollecteurMatchs c=new CollecteurMatchs();
-		
-		workbook=Workbook.createWorkbook(new File("C:\\Users\\Mat\\Desktop\\"
-				+ "TEST_Exemple 1er week-end de compétition 2014-2015.xls"));
+		adresseFichier = "Attribution_Arbitre_Matchs"+(Calendar.getInstance().get(Calendar.DAY_OF_MONTH))+"/"+(Calendar.getInstance().get(Calendar.MONTH))+".xls";
+		workbook=Workbook.createWorkbook(new File(adresseFichier));
 		
 		WritableSheet sheet = workbook.createSheet("TEST", 0); 
 		

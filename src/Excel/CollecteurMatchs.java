@@ -2,6 +2,7 @@ package Excel;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Calendar;
 import java.util.HashMap;
 
 import Representation.Arbitre;
@@ -110,13 +111,4 @@ public class CollecteurMatchs implements Collecteur{
 
 		return matchs;
 	}
-	
-	public static void main(String[] args) throws Exception {
-		CollecteurMatchs c= new CollecteurMatchs();
-		System.out.println(c.getData().size());
-		System.out.println(c.getData().get(1).getReceveuse().getId());
-		System.out.println(c.getData().get(4).getVisiteuse().getId());
-		System.out.println(c.getData().get(8).getCategorie());
-	}
-
 }
