@@ -44,6 +44,10 @@ public class CollecteurDisponibilitesArbitre implements Collecteur {
 		// TODO Auto-generated method stub
 		this.adresseFichier = adresseFichierDispos;
 	}
+	
+	public void dataMaking(){
+		
+	}
 
 	public HashMap<String, ArbitreDisponibilite> getData()
 			throws BiffException, IOException {
@@ -54,9 +58,9 @@ public class CollecteurDisponibilitesArbitre implements Collecteur {
 		for (int i = 1; i < sheet.getRows(); i++) {
 
 			String licence = sheet.getCell(0, i).getContents();
-			boolean[] disp = new boolean[4];
+			boolean[] disp = new boolean[7];
 			for (int j = 1; j < sheet.getColumns(); j++) {
-
+				
 				if (!sheet.getCell(j, i).getContents().isEmpty()) {
 					disp[j - 1] = false;
 				} else {
@@ -68,8 +72,13 @@ public class CollecteurDisponibilitesArbitre implements Collecteur {
 			dispos.put(licence, ad);
 
 		}
-
+		c.getWorkbook().close();
 		return dispos;
+	}
+	
+	public HashMap<String,ArbitreDisponibilite> disponibilite(){
+		
+		return null;		
 	}
 
 	public static void main(String[] args) throws BiffException, IOException {

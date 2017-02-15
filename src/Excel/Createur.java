@@ -1,7 +1,10 @@
 package Excel;
 
 import java.io.File;
+
 import java.io.IOException;
+import java.util.Calendar;
+import java.util.Date;
 
 import jxl.Cell;
 import jxl.Workbook;
@@ -41,6 +44,7 @@ public class Createur {
 				Cell a=c.getWorkbook().getSheet(0).getCell(i,j);
 				Label aJout=new Label(i,j,a.getContents());
 				sheet.addCell(aJout);
+				
 			}
 		}
 		
@@ -51,7 +55,11 @@ public class Createur {
 	}
 	
 	public static void main(String[] args) throws RowsExceededException, BiffException, WriteException, IndexOutOfBoundsException, IOException {
-		ecritureFichierExcel();
+		//ecritureFichierExcel();
+		Calendar cal=Calendar.getInstance();		
+		System.out.println(cal.get(Calendar.DAY_OF_WEEK));
+		
+		
 	}
 	
 }
