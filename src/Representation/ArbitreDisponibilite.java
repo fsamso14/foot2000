@@ -9,7 +9,7 @@ public class ArbitreDisponibilite {
 	public static final int SAMEDI_20H = 3;
 	public static final int DIMANCHE_10H = 4;
 	public static final int DIMANCHE_13H = 5;
-	public static final int DIMANCHE_20H = 5;
+	public static final int DIMANCHE_15H = 6;
 	public boolean[] dispos;
 
 	public ArbitreDisponibilite(boolean samedi14h, boolean samedi16h,

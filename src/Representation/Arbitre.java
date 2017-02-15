@@ -30,7 +30,9 @@ public class Arbitre {
 		this.nom = nom;
 		this.prenom = prenom;
 
-		this.disponibilites = disponibilites;
+		//this.ville=v;
+		this.disponibilites = new ArbitreDisponibilite();
+
 	}
 
 	public CategorieArbitre getCategorie() {
