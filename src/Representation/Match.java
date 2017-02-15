@@ -4,6 +4,16 @@ import java.util.UUID;
 
 public class Match {
 	
+	public static final int SAMEDI_14 = 1;
+	public static final int SAMEDI_16 = 2;
+	public static final int SAMEDI_18 = 3;
+	public static final int SAMEDI_20 = 4;
+	public static final int DIMANCHE_10_30 = 5;
+	public static final int DIMANCHE_13 = 6;
+	public static final int DIMANCHE_15 = 7;
+	public static final int AUTRE_CRENEAU = 0;
+	
+	private int creneau;
 	private Club receveuse;
 	private Club visiteuse;
 	private int categorie;
@@ -44,4 +54,13 @@ public class Match {
 	public void setArbitre(Arbitre arbitre,int index) {
 		this.arbitres[index] = arbitre;
 	}
+
+	public int getCreneau() {
+		return creneau;
+	}
+
+	public void setCreneau(int creneau) {
+		this.creneau = creneau;
+	}
+	
 }
