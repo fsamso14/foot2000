@@ -54,7 +54,7 @@ public class CollecteurDisponibilitesArbitre implements Collecteur {
 		for (int i = 1; i < sheet.getRows(); i++) {
 
 			String licence = sheet.getCell(0, i).getContents();
-			boolean[] disp = new boolean[4];
+			boolean[] disp = new boolean[7];
 			for (int j = 1; j < sheet.getColumns(); j++) {
 
 				if (!sheet.getCell(j, i).getContents().isEmpty()) {
