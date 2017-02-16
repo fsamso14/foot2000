@@ -17,13 +17,16 @@ public class ContrainteSurGrade implements Contrainte{
 		int nbArbitres = journee.getNbArbitres();
 		for(int i = 1; i < nbMatchs+1 ; i++){
 			for ( int j = 1 ; j < nbArbitres +1; j++){
-				if(journee.getMatch(i).getCategorie() > journee.getArbitre(j).getCategorie().getGrade()){
+				if(journee.getMatch(i).getCategorie() != journee.getArbitre(j).getCategorie().getGrade() && !journee.getArbitre(j).getCategorie().isAssistant()){
 					mod.getModele().arithm(mod.getVars()[i-1][0],"!=",journee.getArbitre(j).getArbitreID()).post();				
 				}
-				if(journee.getMatch(i).getCategorie() -1 > journee.getArbitre(j).getCategorie().getGrade()){
+				if(journee.getMatch(i).getCategorie() -1 != journee.getArbitre(j).getCategorie().getGrade()){
 					mod.getModele().arithm(mod.getVars()[i-1][1],"!=",journee.getArbitre(j).getArbitreID()).post();
 					mod.getModele().arithm(mod.getVars()[i-1][2],"!=",journee.getArbitre(j).getArbitreID()).post();
 				}
+				/*if(journee){
+					
+				}*/
 			}
 		}
 		
