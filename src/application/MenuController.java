@@ -26,6 +26,9 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import jxl.read.biff.BiffException;
+import jxl.write.WriteException;
+import jxl.write.biff.RowsExceededException;
 import Excel.CollecteurArbitres;
 import Excel.CollecteurCategorieArbitre;
 import Excel.CollecteurClubs;
@@ -33,6 +36,7 @@ import Excel.CollecteurDisponibilitesArbitre;
 import Excel.CollecteurGroupements;
 import Excel.CollecteurMatchs;
 import Excel.Createur;
+import foot2000.Modele;
 
 public class MenuController implements Initializable {
 
@@ -280,7 +284,7 @@ public class MenuController implements Initializable {
 			Thread t = new Thread(new Runnable() {
 				public void run() {
 					try {
-						foot2000.Main.run();
+						Modele mod = foot2000.Main.run();
 
 						Platform.runLater(new Runnable() {
 							public void run() {
@@ -289,13 +293,15 @@ public class MenuController implements Initializable {
 										.showSaveDialog(new Stage())
 										.getAbsolutePath();
 								if (output != null) {
-									File f = new File(output);
 									Createur.adresseFichier = output;
 									try {
-										if (f != null) {
-											f.createNewFile();
 
-
+										Createur cr = new Createur(output, mod
+												.getRepresentation());
+										try {
+											cr.ecritureFichierExcel();
+										} catch (Exception e) {
+											e.printStackTrace();
 
 										}
 
@@ -383,6 +389,9 @@ public class MenuController implements Initializable {
 
 	@FXML
 	public void reinitialize() {
+
+		FileChooser filechooser = filechooser();
+		output = filechooser.showSaveDialog(new Stage()).getAbsolutePath();
 		fichierArbitres = null;
 		fichierMatchs = null;
 		fichierClubs = null;

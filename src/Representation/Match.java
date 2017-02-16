@@ -32,6 +32,10 @@ public class Match {
 		this.categorie = categorie;
 	}
 	
+	public String getNumMatch(){
+		return numMatch;
+	}
+	
 	public Club getReceveuse(){
 		return this.receveuse;
 	}
