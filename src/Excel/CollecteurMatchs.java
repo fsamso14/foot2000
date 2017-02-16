@@ -91,20 +91,32 @@ public class CollecteurMatchs implements Collecteur{
 			case "D3":
 				idcat=ListeCategorieMatch.D3;
 				break;			
-			case "AA1":
-				idcat=ListeCategorieMatch.AAD1;
+			case "U19R":
+				idcat=ListeCategorieMatch.U19R;
 				break;
-			case "AA2":
-				idcat=ListeCategorieMatch.AAD2;
+			case "U18A":
+				idcat=ListeCategorieMatch.U18A;
+				break;
+			case "U18B":
+				idcat=ListeCategorieMatch.U18B;
+				break;
+			case "U16":
+				idcat=ListeCategorieMatch.U16;
+				break;
+			case "U15":
+				idcat=ListeCategorieMatch.U15;
 				break;
 			default:
 				idcat=0;
 			}
-			Club receveur=clubs.get(idClubReceveur);
-			Club visiteur=clubs.get(idClubVisiteur);
-			Match match=new Match(numero,receveur,visiteur,idcat);
-			matchs.put(k, match);
-			k++;
+			
+			if(idcat!=0){
+				Club receveur=clubs.get(idClubReceveur);
+				Club visiteur=clubs.get(idClubVisiteur);
+				Match match=new Match(numero,receveur,visiteur,idcat);
+				matchs.put(k, match);
+				k++;
+			}			
 		}
 
 		collecteur.getWorkbook().close();
