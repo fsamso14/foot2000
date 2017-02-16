@@ -3,10 +3,11 @@ package Excel;
 import java.io.File;
 
 
+
 import java.io.IOException;
 import java.util.Calendar;
 
-
+import Representation.Representation;
 import jxl.Cell;
 import jxl.Workbook;
 import jxl.read.biff.BiffException;
@@ -26,24 +27,30 @@ public class Createur {
 
 	public static String adresseFichier;
 	public static WritableWorkbook workbook;
+	public Representation r;
 
 	// String adresseFichier;
 
 	public Createur(String adresseFichier) throws IOException {
 		this.workbook = Workbook.createWorkbook(new File(adresseFichier));
+		this.r=r;
 	}
 
-	public static void ecritureFichierExcel() throws BiffException,
+	public void ecritureFichierExcel() throws BiffException,
 			IOException, RowsExceededException, WriteException,
 			IndexOutOfBoundsException {
+	
 		CollecteurMatchs c = new CollecteurMatchs();
-		adresseFichier = "Attribution_Arbitre_Matchs"
+		/*adresseFichier = "Attribution_Arbitre_Matchs"
 				+ (Calendar.getInstance().get(Calendar.DAY_OF_MONTH)) + "_"
-				+ (Calendar.getInstance().get(Calendar.MONTH)) + ".xls";
+				+ (Calendar.getInstance().get(Calendar.MONTH)) + ".xls";*/
+		adresseFichier ="C:\\Users\\Mat\\Desktop\\TesT.xls";
 		workbook = Workbook.createWorkbook(new File(adresseFichier));
 
 		WritableSheet sheet = workbook.createSheet("TEST", 0);
-
+		
+		
+		
 		for (int i = 0; i < c.getWorkbook().getSheet(0).getColumns(); i++) {
 
 			for (int j = 0; j < c.getWorkbook().getSheet(0).getRows(); j++) {
@@ -54,7 +61,31 @@ public class Createur {
 				
 			}
 		}
-
+		
+		for (int i = 1; i < c.getWorkbook().getSheet(0).getRows(); i++) {
+			
+			String numMatch=workbook.getSheet(0).getCell(6,i).getContents();
+			for(int j=0;j<r.getNbMatchs();j++){
+				if(r.getMatch(j).getNumMatch().contains(numMatch)){
+					
+					Label ac=new Label(25,i,r.getMatch(i).getArbitres()[0].getNom()+
+							r.getMatch(i).getArbitres()[0]);
+					sheet.addCell(ac);
+					
+					Label aa1=new Label(26,i,r.getMatch(i).getArbitres()[0].getNom()+
+							r.getMatch(i).getArbitres()[1]);
+					sheet.addCell(aa1);
+					
+					Label aa2=new Label(27,i,r.getMatch(i).getArbitres()[0].getNom()+
+							r.getMatch(i).getArbitres()[2]);
+					sheet.addCell(aa2);
+				}
+			}
+			
+			
+			
+		}
+		
 		workbook.write();
 		if (workbook != null) {
 			workbook.close();
@@ -65,7 +96,7 @@ public class Createur {
 	public static void main(String[] args) throws RowsExceededException,
 			BiffException, WriteException, IndexOutOfBoundsException,
 			IOException {
-		ecritureFichierExcel();
+		//this.ecritureFichierExcel();
 
 	}
 
