@@ -41,6 +41,7 @@ public class Representation {
 		for(int i=1;i<matcH.size()+1;i++){
 			this.matchs[i-1]=matcH.get(i);
 		}
+		Club.distances = this.distances();
 		
 	}
 	

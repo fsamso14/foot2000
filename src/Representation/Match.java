@@ -62,5 +62,12 @@ public class Match {
 	public void setCreneau(int creneau) {
 		this.creneau = creneau;
 	}
-	
+	public String toString(){
+		return "Créneau :"+creneau
+				+"\n"+receveuse.id+" - "+visiteuse.id+"\n"
+				+"Catégorie Match : "+this.categorie+"\n"
+				+ "Arbitre central : "+arbitres[0]
+				+"\n"+"Arbitre touche 1 : "+arbitres[1]
+				+"\n"+"Arbitre touche 2 : "+arbitres[2]	;
+	}
 }
