@@ -16,7 +16,7 @@ public class CollecteurClubs implements Collecteur{
 
 	
 	Workbook workbook;
-	public	static String adresseFichier = "C:\\Users\\Fab\\Desktop\\FakeTest\\DistancesClubs.xls";
+	public	static String adresseFichier = "C:\\Users\\Mat\\Desktop\\FakeTest\\Clubs.xls";
 			
 			/*"C:\\Users\\Mat\\Desktop\\Projets\\Foot2000"
 			+ "\\Projet Logiciel Désignations CDA EMN\\Annexes"

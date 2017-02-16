@@ -9,6 +9,7 @@ import Representation.Arbitre;
 import Representation.ArbitreDisponibilite;
 import Representation.CategorieArbitre;
 import Representation.Club;
+import Representation.ListeCategorieArbitre;
 import Representation.ListeCategorieMatch;
 import Representation.Match;
 import jxl.Sheet;
@@ -25,7 +26,7 @@ import jxl.read.biff.BiffException;
 public class CollecteurMatchs implements Collecteur{
 
 	Workbook workbook;
-	public	static String adresseFichier = "C:\\Users\\Fab\\Desktop\\FakeTest\\Matchs.xls";
+	public	static String adresseFichier = "C:\\Users\\Mat\\Desktop\\FakeTest\\Matchs.xls";
 
 
 	/*+ "Projet Logiciel Désignations CDA EMN\\Annexes\\"
@@ -78,10 +79,10 @@ public class CollecteurMatchs implements Collecteur{
 			String idClubReceveur=sheet.getCell(8,j).getContents();
 			String idClubVisiteur=sheet.getCell(11,j).getContents();
 			String cat=sheet.getCell(1,j).getContents();
-			
+
 			int idcat;
 			switch (cat){
-			
+
 			case "D1":
 				idcat=ListeCategorieMatch.D1;
 				break;
@@ -109,18 +110,65 @@ public class CollecteurMatchs implements Collecteur{
 			default:
 				idcat=0;
 			}
-			
+
 			if(idcat!=0){
 				Club receveur=clubs.get(idClubReceveur);
 				Club visiteur=clubs.get(idClubVisiteur);
 				Match match=new Match(numero,receveur,visiteur,idcat);
-				matchs.put(k, match);
-				k++;
-			}			
+
+				String horaire=sheet.getCell(14,j).getContents();
+				String jour=sheet.getCell(15,j).getContents();
+				int creneau;
+				if(jour.contains("Samedi")){
+
+					switch(horaire){
+					case "14H":
+						creneau=Match.SAMEDI_14;
+						break;
+					case "16H":
+						creneau=Match.SAMEDI_16;
+						break;
+					case "18H":
+						creneau=Match.SAMEDI_18;
+						break;
+					case "20H":
+						creneau=Match.SAMEDI_20;
+						break;
+					default:
+						creneau=Match.AUTRE_CRENEAU;
+					}
+					if(jour.contains("Dimanche")){
+						
+						switch(horaire){
+						case "10H30":
+							creneau=Match.DIMANCHE_10_30;
+							break;
+						case "13H":
+							creneau=Match.DIMANCHE_13;
+							break;
+						case "15H":
+							creneau=Match.DIMANCHE_15;
+							break;
+						default:
+							creneau=Match.AUTRE_CRENEAU;
+						}
+					}
+					match.setCreneau(creneau);
+					matchs.put(k, match);
+					k++;
+				}			
+			}
 		}
+			collecteur.getWorkbook().close();
 
-		collecteur.getWorkbook().close();
+			return matchs;
+		}
+		
+	
 
-		return matchs;
+
+	public static void main(String[] args) throws Exception {
+		CollecteurMatchs c = new CollecteurMatchs();
+		System.out.println(c.getData().get(3).getCreneau());
 	}
 }
