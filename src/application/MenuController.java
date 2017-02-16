@@ -274,29 +274,16 @@ public class MenuController implements Initializable {
 	@FXML
 	void handleEntrer() {
 		try {
-
-			CollecteurArbitres.adresseFichier = labelArbitre.getText();
-			CollecteurCategorieArbitre.adresseFichier = labelArbitre.getText();
-			CollecteurClubs.adresseFichier = labelClubs.getText();
-			CollecteurDisponibilitesArbitre.adresseFichier = labelIndispo
-					.getText();
-			CollecteurMatchs.adresseFichier = labelMatchs.getText();
-			CollecteurGroupements.adresseFichier = labelGroupements.getText();
-
+			setCollecteur();
 			progression();
 
 			Thread t = new Thread(new Runnable() {
-
-				@Override
 				public void run() {
-
 					try {
 						foot2000.Main.run();
+
 						Platform.runLater(new Runnable() {
-
-							@Override
 							public void run() {
-
 								FileChooser filechooser = filechooser();
 								output = filechooser
 										.showSaveDialog(new Stage())
@@ -304,43 +291,47 @@ public class MenuController implements Initializable {
 								if (output != null) {
 									File f = new File(output);
 									Createur.adresseFichier = output;
-
 									try {
 										if (f != null) {
 											f.createNewFile();
+
+
+
 										}
 
-										// ECRITURE FICHIER
-
 									} catch (IOException e) {
-										// TODO Auto-generated catch block
 										e.printStackTrace();
 									}
 								}
-
 							}
 						});
 					} catch (Exception e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
+						alert();
 					}
 				}
 			});
 			t.start();
 
 		} catch (Exception e) {
-			alert();
+			e.printStackTrace();
 		}
 
 	}
 
 	void alert() {
+		Platform.runLater(new Runnable() {
 
-		Alert alert = new Alert(Alert.AlertType.ERROR);
-		alert.setTitle("XLS invalide.");
-		alert.setHeaderText("L'un des documents est invalide.");
-		alert.setContentText("Veuillez consulter la notice, et fournir les documents sous le format demandé.");
-		alert.show();
+			@Override
+			public void run() {
+				progressBar.setVisible(false);
+				// TODO Auto-generated method stub
+				Alert alert = new Alert(Alert.AlertType.ERROR);
+				alert.setTitle("XLS invalide.");
+				alert.setHeaderText("L'un des documents est invalide.");
+				alert.setContentText("Veuillez consulter la notice, et fournir les documents sous le format demandé.");
+				alert.show();
+			}
+		});
 
 	}
 
@@ -368,6 +359,15 @@ public class MenuController implements Initializable {
 			}
 		});
 
+	}
+
+	void setCollecteur() {
+		CollecteurArbitres.adresseFichier = labelArbitre.getText();
+		CollecteurCategorieArbitre.adresseFichier = labelArbitre.getText();
+		CollecteurClubs.adresseFichier = labelClubs.getText();
+		CollecteurDisponibilitesArbitre.adresseFichier = labelIndispo.getText();
+		CollecteurMatchs.adresseFichier = labelMatchs.getText();
+		CollecteurGroupements.adresseFichier = labelGroupements.getText();
 	}
 
 	/**
