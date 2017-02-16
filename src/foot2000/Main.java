@@ -18,7 +18,7 @@ import Representation.Match;
 import Representation.Representation;
 
 public class Main {
-	public static void run() throws Exception {
+	public static Modele run() throws Exception {
 
 		Modele mod = new Modele(new Representation());
 		ContrainteAllDiffs c1 = new ContrainteAllDiffs();
@@ -50,6 +50,7 @@ public class Main {
 													.get(mod.getRepresentation().getMatch(i).getArbitres()[0].getClub().getId()));
 			}
 		}
+		return mod;
 	}
 
 	public static void ecritureResultat(Modele mod) {
