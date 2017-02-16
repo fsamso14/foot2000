@@ -24,6 +24,19 @@ public class ContrainteSurDisponibilite implements Contrainte{
 						mod.getModele().arithm(mod.getVars()[i-1][2], "!=",j).post();
 					}
 				}
+				else{
+					boolean test = true;
+					for(boolean disp : journee.getArbitre(j).getDispos()){
+						if(test){
+							test = disp;
+						}
+					}
+					if(!test){
+						mod.getModele().arithm(mod.getVars()[i-1][0], "!=",j).post();
+						mod.getModele().arithm(mod.getVars()[i-1][1], "!=",j).post();
+						mod.getModele().arithm(mod.getVars()[i-1][2], "!=",j).post();
+					}
+				}
 			}
 		}
 		

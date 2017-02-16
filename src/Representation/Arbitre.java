@@ -31,7 +31,7 @@ public class Arbitre {
 		this.prenom = prenom;
 
 		//this.ville=v;
-		this.disponibilites = new ArbitreDisponibilite();
+		this.disponibilites = disponibilites;
 
 	}
 
@@ -100,6 +100,9 @@ public class Arbitre {
 		return ""+nom+", "+prenom+"\n"+
 				"	Catégorie Arbitre : "+categorie.getGrade()
 				+"	Club Arbitre : "+club.getId();
+	}
+	public boolean[] getDispos(){
+		return this.disponibilites.dispos;
 	}
 	
 }
