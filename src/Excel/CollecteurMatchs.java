@@ -118,7 +118,7 @@ public class CollecteurMatchs implements Collecteur{
 
 				String horaire=sheet.getCell(14,j).getContents();
 				String jour=sheet.getCell(15,j).getContents();
-				int creneau;
+				int creneau= 0;
 				if(jour.contains("Samedi")){
 
 					switch(horaire){
@@ -137,26 +137,26 @@ public class CollecteurMatchs implements Collecteur{
 					default:
 						creneau=Match.AUTRE_CRENEAU;
 					}
-					if(jour.contains("Dimanche")){
-						
-						switch(horaire){
-						case "10H30":
-							creneau=Match.DIMANCHE_10_30;
-							break;
-						case "13H":
-							creneau=Match.DIMANCHE_13;
-							break;
-						case "15H":
-							creneau=Match.DIMANCHE_15;
-							break;
-						default:
-							creneau=Match.AUTRE_CRENEAU;
-						}
+				}
+				if(jour.contains("Dimanche")){
+					
+					switch(horaire){
+					case "10H30":
+						creneau=Match.DIMANCHE_10_30;
+						break;
+					case "13H":
+						creneau=Match.DIMANCHE_13;
+						break;
+					case "15H":
+						creneau=Match.DIMANCHE_15;
+						break;
+					default:
+						creneau=Match.AUTRE_CRENEAU;
 					}
-					match.setCreneau(creneau);
-					matchs.put(k, match);
-					k++;
-				}			
+				}
+				match.setCreneau(creneau);
+				matchs.put(k, match);
+				k++;
 			}
 		}
 			collecteur.getWorkbook().close();

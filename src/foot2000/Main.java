@@ -43,7 +43,7 @@ public class Main {
 		finalInstantiation(mod);
 		ecritureResultat(mod);
 		for (int i = 1 ; i < mod.getRepresentation().getNbMatchs()+1;i++) {
-			
+			System.out.println("################## Match n°"+i+" #############################");
 			System.out.println(mod.getRepresentation().getMatch(i));
 			if(mod.getRepresentation().getMatch(i).getArbitres()[0]!=null){
 				System.out.println("Distances : "+Club.distances.get(mod.getRepresentation().getMatch(i).getReceveuse().getId())
