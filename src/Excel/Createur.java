@@ -66,8 +66,8 @@ public class Createur {
 				if (r.getMatch(j).getNumMatch().contains(numMatch)) {
 					try {
 						Label ac = new Label(25, i,
-								r.getMatch(i).getArbitres()[0].getNom()
-										+ r.getMatch(i).getArbitres()[0]);
+								r.getMatch(i).getArbitres()[0].getNom()+" "
+										+ r.getMatch(i).getArbitres()[0].getPrenom());
 						sheet.addCell(ac);
 					} catch (Exception e) {
 						// TODO: handle exception
@@ -75,8 +75,8 @@ public class Createur {
 					
 					try {
 						Label aa1 = new Label(26, i,
-								r.getMatch(i).getArbitres()[0].getNom()
-										+ r.getMatch(i).getArbitres()[1]);
+								r.getMatch(i).getArbitres()[1].getNom()+" "
+										+ r.getMatch(i).getArbitres()[1].getPrenom());
 						sheet.addCell(aa1);
 					} catch (Exception e) {
 						// TODO: handle exception
@@ -84,8 +84,8 @@ public class Createur {
 					
 					try {
 						Label aa2 = new Label(27, i,
-								r.getMatch(i).getArbitres()[0].getNom()
-										+ r.getMatch(i).getArbitres()[2]);
+								r.getMatch(i).getArbitres()[2].getNom()+" "
+										+ r.getMatch(i).getArbitres()[2].getPrenom());
 						sheet.addCell(aa2);
 					} catch (Exception e) {
 						// TODO: handle exception
