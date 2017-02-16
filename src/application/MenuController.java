@@ -26,6 +26,9 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import jxl.read.biff.BiffException;
+import jxl.write.WriteException;
+import jxl.write.biff.RowsExceededException;
 import Excel.CollecteurArbitres;
 import Excel.CollecteurCategorieArbitre;
 import Excel.CollecteurClubs;
@@ -33,6 +36,7 @@ import Excel.CollecteurDisponibilitesArbitre;
 import Excel.CollecteurGroupements;
 import Excel.CollecteurMatchs;
 import Excel.Createur;
+import foot2000.Modele;
 
 public class MenuController implements Initializable {
 
@@ -280,7 +284,7 @@ public class MenuController implements Initializable {
 			Thread t = new Thread(new Runnable() {
 				public void run() {
 					try {
-						foot2000.Main.run();
+						Modele mod = foot2000.Main.run();
 
 						Platform.runLater(new Runnable() {
 							public void run() {
@@ -294,8 +298,23 @@ public class MenuController implements Initializable {
 									try {
 										if (f != null) {
 											f.createNewFile();
-
-
+											Createur cr=new Createur(Createur.adresseFichier,
+													mod.getRepresentation());
+											try {
+												cr.ecritureFichierExcel();
+											} catch (RowsExceededException e) {
+												// TODO Auto-generated catch block
+												e.printStackTrace();
+											} catch (BiffException e) {
+												// TODO Auto-generated catch block
+												e.printStackTrace();
+											} catch (WriteException e) {
+												// TODO Auto-generated catch block
+												e.printStackTrace();
+											} catch (IndexOutOfBoundsException e) {
+												// TODO Auto-generated catch block
+												e.printStackTrace();
+											}
 
 										}
 

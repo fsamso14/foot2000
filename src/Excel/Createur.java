@@ -31,7 +31,7 @@ public class Createur {
 
 	// String adresseFichier;
 
-	public Createur(String adresseFichier) throws IOException {
+	public Createur(String adresseFichier, Representation r) throws IOException {
 		this.workbook = Workbook.createWorkbook(new File(adresseFichier));
 		this.r=r;
 	}
@@ -44,7 +44,7 @@ public class Createur {
 		/*adresseFichier = "Attribution_Arbitre_Matchs"
 				+ (Calendar.getInstance().get(Calendar.DAY_OF_MONTH)) + "_"
 				+ (Calendar.getInstance().get(Calendar.MONTH)) + ".xls";*/
-		adresseFichier ="C:\\Users\\Mat\\Desktop\\TesT.xls";
+		
 		workbook = Workbook.createWorkbook(new File(adresseFichier));
 
 		WritableSheet sheet = workbook.createSheet("TEST", 0);
@@ -96,7 +96,7 @@ public class Createur {
 	public static void main(String[] args) throws RowsExceededException,
 			BiffException, WriteException, IndexOutOfBoundsException,
 			IOException {
-		//this.ecritureFichierExcel();
+		//ecritureFichierExcel();
 
 	}
 
