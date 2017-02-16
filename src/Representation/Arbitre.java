@@ -65,8 +65,8 @@ public class Arbitre {
 		return this.licence;
 	}
 	
-	public boolean getDispo(int jour){
-		return this.disponibilites.disponible(jour);
+	public boolean getDispo(int creneau){
+		return this.disponibilites.disponible(creneau);
 	}
 	public void setDispo(boolean dispo,int jour){
 		this.disponibilites.setDispo(dispo, jour);
@@ -95,6 +95,11 @@ public class Arbitre {
 	public void setPrenom(String p) {
 		// TODO Auto-generated method stub
 		this.prenom = p;
+	}
+	public String toString(){
+		return ""+nom+", "+prenom+"\n"+
+				"	Catégorie Arbitre : "+categorie.getGrade()
+				+"	Club Arbitre : "+club.getId();
 	}
 	
 }

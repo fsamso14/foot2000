@@ -13,6 +13,7 @@ import Contraintes.ContrainteSurDistance;
 import Contraintes.ContrainteSurGrade;
 import Contraintes.ContrainteSurGroupements;
 import Contraintes.ObjectiveFunction;
+import Representation.Club;
 import Representation.Match;
 import Representation.Representation;
 
@@ -30,20 +31,25 @@ public class Main {
 		c2.ajout_contrainte(mod);
 		c3.ajout_contrainte(mod);
 		c4.ajout_contrainte(mod);
+		c5.ajout_contrainte(mod);
 		obj.ajout_contrainte(mod);
 		// System.out.println(mod.getModele().getSolver().solve());
 		mod.getModele()
 				.getSolver()
 				.findOptimalSolution(mod.getNombreZeros(), Model.MINIMIZE,
-						new TimeCounter(mod.getModele(), (long) 30000000000.0));
+						new TimeCounter(mod.getModele(), (long) 300000000000.0));
 		// mod.getModele().getSolver().findAllSolutions();
 		// mod.getModele().getSolver().showStatistics();
 		finalInstantiation(mod);
 		ecritureResultat(mod);
-		for (IntVar x : mod.getVarsAsArray()) {
-			System.out.println(x + " : " + x.getValue());
+		for (int i = 1 ; i < mod.getRepresentation().getNbMatchs()+1;i++) {
+			
+			System.out.println(mod.getRepresentation().getMatch(i));
+			if(mod.getRepresentation().getMatch(i).getArbitres()[0]!=null){
+				System.out.println("Distances : "+Club.distances.get(mod.getRepresentation().getMatch(i).getReceveuse().getId())
+													.get(mod.getRepresentation().getMatch(i).getArbitres()[0].getClub().getId()));
+			}
 		}
-
 	}
 
 	public static void ecritureResultat(Modele mod) {

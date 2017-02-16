@@ -13,7 +13,7 @@ import jxl.read.biff.BiffException;
 public class CollecteurDisponibilitesArbitre implements Collecteur {
 
 	Workbook workbook;
-	public static String adresseFichier = "C:\\Users\\Fab\\Desktop\\FakeTest\\IndisposArbitres.xls";
+	public static String adresseFichier = "C:\\Users\\Mat\\Desktop\\FakeTest\\IndisposArbitres.xls";
 
 	public CollecteurDisponibilitesArbitre() throws BiffException, IOException {
 		WorkbookSettings ws = new WorkbookSettings();
@@ -44,6 +44,10 @@ public class CollecteurDisponibilitesArbitre implements Collecteur {
 		// TODO Auto-generated method stub
 		this.adresseFichier = adresseFichierDispos;
 	}
+	
+	public void dataMaking(){
+		
+	}
 
 	public HashMap<String, ArbitreDisponibilite> getData()
 			throws BiffException, IOException {
@@ -56,7 +60,7 @@ public class CollecteurDisponibilitesArbitre implements Collecteur {
 			String licence = sheet.getCell(0, i).getContents();
 			boolean[] disp = new boolean[7];
 			for (int j = 1; j < sheet.getColumns(); j++) {
-
+				
 				if (!sheet.getCell(j, i).getContents().isEmpty()) {
 					disp[j - 1] = false;
 				} else {
@@ -68,15 +72,20 @@ public class CollecteurDisponibilitesArbitre implements Collecteur {
 			dispos.put(licence, ad);
 
 		}
-
+		c.getWorkbook().close();
 		return dispos;
+	}
+	
+	public HashMap<String,ArbitreDisponibilite> disponibilite(){
+		
+		return null;		
 	}
 
 	public static void main(String[] args) throws BiffException, IOException {
 		CollecteurDisponibilitesArbitre c = new CollecteurDisponibilitesArbitre();
 
 		System.out.println(c.getData().size());
-		System.out.println(c.getData().get("2543369222").disponible(1));
+		System.out.println(c.getData().get("2543369222").disponible(0));
 	}
 
 }
