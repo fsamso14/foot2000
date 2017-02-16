@@ -1,0 +1,297 @@
+/**
+ * ARBITRES BOUTON
+ * ===================================================================================
+ * ===================================================================================
+ */
+#fileSelectArbitres  {
+    -fx-padding: 8.0 15.0 15.0 15.0;
+    -fx-background-insets: 0.0,0.0 0.0 5.0 0.0, 0.0 0.0 6.0 0.0, 0.0 0.0 7.0 0.0;
+    -fx-background-radius: 8.0;
+    -fx-background-color: 
+     linear-gradient(from 0.0% 93.0% to 0.0% 100.0%, #395cab 0.0%, #223768 100.0%),
+       #263e75,
+        #7ebcea,
+        radial-gradient(center 50.0% 50.0%, radius 100.0%, #7ebcea, #426ab7);
+    -fx-effect: dropshadow( gaussian , rgba(0.0,0.0,0.0,0.75) , 4.0,0.0,0.0,1.0 );
+    -fx-font-weight: bold;
+    -fx-font-size: 1.6em;
+    
+  
+}
+#fileSelectArbitres:hover {
+    -fx-background-color: 
+        linear-gradient(from 0.0% 93.0% to 0.0% 100.0%, #395cab 0.0%, #223768 100.0%),
+         #263e75,
+        #7ebcea,
+        radial-gradient(center 50.0% 50.0%, radius 100.0%,   #7ebcea,#223768);
+}
+#fileSelectArbitres:pressed {
+    -fx-padding: 10.0 15.0 13.0 15.0;
+    -fx-background-insets: 2.0 0.0 0.0 0.0,2.0 0.0 3.0 0.0, 2.0 0.0 4.0 0.0, 2.0 0.0 5.0 0.0;
+}
+#fileSelectArbitres  Text {
+    -fx-fill: white;
+    -fx-effect: dropshadow( gaussian , #a30000 , 0.0,0.0,0.0,2.0 );
+}
+
+/**
+ * MATCHS BOUTON
+ * ===================================================================================
+ * ===================================================================================
+ */
+ 
+ #fileSelectMatchs  {
+    -fx-padding: 8.0 15.0 15.0 15.0;
+    -fx-background-insets: 0.0,0.0 0.0 5.0 0.0, 0.0 0.0 6.0 0.0, 0.0 0.0 7.0 0.0;
+    -fx-background-radius: 8.0;
+    -fx-background-color: 
+     linear-gradient(from 0.0% 93.0% to 0.0% 100.0%, #395cab 0.0%, #223768 100.0%),
+       #263e75,
+        #7ebcea,
+        radial-gradient(center 50.0% 50.0%, radius 100.0%, #7ebcea, #426ab7);
+    -fx-effect: dropshadow( gaussian , rgba(0.0,0.0,0.0,0.75) , 4.0,0.0,0.0,1.0 );
+    -fx-font-weight: bold;
+    -fx-font-size: 1.6em;
+    
+  
+}
+#fileSelectMatchs:hover {
+    -fx-background-color: 
+        linear-gradient(from 0.0% 93.0% to 0.0% 100.0%, #395cab 0.0%, #223768 100.0%),
+         #263e75,
+        #7ebcea,
+        radial-gradient(center 50.0% 50.0%, radius 100.0%,   #7ebcea,#223768);
+}
+#fileSelectMatchs:pressed {
+    -fx-padding: 10.0 15.0 13.0 15.0;
+    -fx-background-insets: 2.0 0.0 0.0 0.0,2.0 0.0 3.0 0.0, 2.0 0.0 4.0 0.0, 2.0 0.0 5.0 0.0;
+}
+#fileSelectMatchs  Text {
+    -fx-fill: white;
+    -fx-effect: dropshadow( gaussian , #a30000 , 0.0,0.0,0.0,2.0 );
+}
+
+/**
+ * EQUIPES BOUTON
+ * ===================================================================================
+ * ===================================================================================
+ */
+ 
+ #fileSelectClubs  {
+    -fx-padding: 8.0 15.0 15.0 15.0;
+    -fx-background-insets: 0.0,0.0 0.0 5.0 0.0, 0.0 0.0 6.0 0.0, 0.0 0.0 7.0 0.0;
+    -fx-background-radius: 8.0;
+    -fx-background-color: 
+     linear-gradient(from 0.0% 93.0% to 0.0% 100.0%, #395cab 0.0%, #223768 100.0%),
+       #263e75,
+        #7ebcea,
+        radial-gradient(center 50.0% 50.0%, radius 100.0%, #7ebcea, #426ab7);
+    -fx-effect: dropshadow( gaussian , rgba(0.0,0.0,0.0,0.75) , 4.0,0.0,0.0,1.0 );
+    -fx-font-weight: bold;
+    -fx-font-size: 1.6em;
+    
+  
+}
+#fileSelectClubs:hover {
+    -fx-background-color: 
+        linear-gradient(from 0.0% 93.0% to 0.0% 100.0%, #395cab 0.0%, #223768 100.0%),
+         #263e75,
+        #7ebcea,
+        radial-gradient(center 50.0% 50.0%, radius 100.0%,   #7ebcea,#223768);
+}
+#fileSelectClubs:pressed {
+    -fx-padding: 10.0 15.0 13.0 15.0;
+    -fx-background-insets: 2.0 0.0 0.0 0.0,2.0 0.0 3.0 0.0, 2.0 0.0 4.0 0.0, 2.0 0.0 5.0 0.0;
+}
+#fileSelectClubs  Text {
+    -fx-fill: white;
+    -fx-effect: dropshadow( gaussian , #a30000 , 0.0,0.0,0.0,2.0 );
+}/**
+ * EQUIPES BOUTON
+ * ===================================================================================
+ * ===================================================================================
+ */
+ 
+ #fileSelectGroupements  {
+    -fx-padding: 8.0 15.0 15.0 15.0;
+    -fx-background-insets: 0.0,0.0 0.0 5.0 0.0, 0.0 0.0 6.0 0.0, 0.0 0.0 7.0 0.0;
+    -fx-background-radius: 8.0;
+    -fx-background-color: 
+     linear-gradient(from 0.0% 93.0% to 0.0% 100.0%, #395cab 0.0%, #223768 100.0%),
+       #263e75,
+        #7ebcea,
+        radial-gradient(center 50.0% 50.0%, radius 100.0%, #7ebcea, #426ab7);
+    -fx-effect: dropshadow( gaussian , rgba(0.0,0.0,0.0,0.75) , 4.0,0.0,0.0,1.0 );
+    -fx-font-weight: bold;
+    -fx-font-size: 1.6em;
+    
+  
+}
+#fileSelectGroupements:hover {
+    -fx-background-color: 
+        linear-gradient(from 0.0% 93.0% to 0.0% 100.0%, #395cab 0.0%, #223768 100.0%),
+         #263e75,
+        #7ebcea,
+        radial-gradient(center 50.0% 50.0%, radius 100.0%,   #7ebcea,#223768);
+}
+#fileSelectGroupements:pressed {
+    -fx-padding: 10.0 15.0 13.0 15.0;
+    -fx-background-insets: 2.0 0.0 0.0 0.0,2.0 0.0 3.0 0.0, 2.0 0.0 4.0 0.0, 2.0 0.0 5.0 0.0;
+}
+#fileSelectGroupements  Text {
+    -fx-fill: white;
+    -fx-effect: dropshadow( gaussian , #a30000 , 0.0,0.0,0.0,2.0 );
+}/**
+ * INDISPO BOUTON
+ * ===================================================================================
+ * ===================================================================================
+ */
+ 
+ #fileSelectIndispo {
+    -fx-padding: 8.0 15.0 15.0 15.0;
+    -fx-background-insets: 0.0,0.0 0.0 5.0 0.0, 0.0 0.0 6.0 0.0, 0.0 0.0 7.0 0.0;
+    -fx-background-radius: 8.0;
+    -fx-background-color: 
+     linear-gradient(from 0.0% 93.0% to 0.0% 100.0%, #395cab 0.0%, #223768 100.0%),
+       #263e75,
+        #7ebcea,
+        radial-gradient(center 50.0% 50.0%, radius 100.0%, #7ebcea, #426ab7);
+    -fx-effect: dropshadow( gaussian , rgba(0.0,0.0,0.0,0.75) , 4.0,0.0,0.0,1.0 );
+    -fx-font-weight: bold;
+    -fx-font-size: 1.6em;
+    
+  
+}
+#fileSelectIndispo:hover {
+    -fx-background-color: 
+        linear-gradient(from 0.0% 93.0% to 0.0% 100.0%, #395cab 0.0%, #223768 100.0%),
+         #263e75,
+        #7ebcea,
+        radial-gradient(center 50.0% 50.0%, radius 100.0%,   #7ebcea,#223768);
+}
+#fileSelectIndispo:pressed {
+    -fx-padding: 10.0 15.0 13.0 15.0;
+    -fx-background-insets: 2.0 0.0 0.0 0.0,2.0 0.0 3.0 0.0, 2.0 0.0 4.0 0.0, 2.0 0.0 5.0 0.0;
+}
+#fileSelectIndispo  Text {
+    -fx-fill: white;
+    -fx-effect: dropshadow( gaussian , #a30000 , 0.0,0.0,0.0,2.0 );
+}
+/**
+ * NOTICE BOUTON
+ * ===================================================================================
+ * ===================================================================================
+ */
+ 
+ #notice  {
+    -fx-padding: 8.0 15.0 15.0 15.0;
+    -fx-background-insets: 0.0,0.0 0.0 5.0 0.0, 0.0 0.0 6.0 0.0, 0.0 0.0 7.0 0.0;
+    -fx-background-radius: 8.0;
+    -fx-background-color: 
+     linear-gradient(from 0.0% 93.0% to 0.0% 100.0%, #395cab 0.0%, #223768 100.0%),
+       #263e75,
+        #7ebcea,
+        radial-gradient(center 50.0% 50.0%, radius 100.0%, #7ebcea, #426ab7);
+    -fx-effect: dropshadow( gaussian , rgba(0.0,0.0,0.0,0.75) , 4.0,0.0,0.0,1.0 );
+    -fx-font-weight: bold;
+    -fx-font-size: 1.4em;
+    
+  
+}
+#notice:hover {
+    -fx-background-color: 
+        linear-gradient(from 0.0% 93.0% to 0.0% 100.0%, #395cab 0.0%, #223768 100.0%),
+         #263e75,
+        #7ebcea,
+        radial-gradient(center 50.0% 50.0%, radius 100.0%,   #7ebcea,#223768);
+}
+#notice:pressed {
+    -fx-padding: 10.0 15.0 13.0 15.0;
+    -fx-background-insets: 2.0 0.0 0.0 0.0,2.0 0.0 3.0 0.0, 2.0 0.0 4.0 0.0, 2.0 0.0 5.0 0.0;
+}
+#notice  Text {
+    -fx-fill: white;
+    -fx-effect: dropshadow( gaussian , #a30000 , 0.0,0.0,0.0,2.0 );
+}/**
+ * ENTRER BOUTON
+ * ===================================================================================
+ * ===================================================================================
+ */
+ 
+ #entrer  {
+    -fx-padding: 8.0 15.0 15.0 15.0;
+    -fx-background-insets: 0.0,0.0 0.0 5.0 0.0, 0.0 0.0 6.0 0.0, 0.0 0.0 7.0 0.0;
+    -fx-background-radius: 8.0;
+    -fx-background-color: 
+     linear-gradient(from 0.0% 93.0% to 0.0% 100.0%, #395cab 0.0%, #223768 100.0%),
+       #263e75,
+        #7ebcea,
+        radial-gradient(center 50.0% 50.0%, radius 100.0%, #7ebcea, #426ab7);
+    -fx-effect: dropshadow( gaussian , rgba(0.0,0.0,0.0,0.75) , 4.0,0.0,0.0,1.0 );
+    -fx-font-weight: bold;
+    -fx-font-size: 1.6em;
+    
+  
+}
+#entrer:hover {
+    -fx-background-color: 
+        linear-gradient(from 0.0% 93.0% to 0.0% 100.0%, #395cab 0.0%, #223768 100.0%),
+         #263e75,
+        #7ebcea,
+        radial-gradient(center 50.0% 50.0%, radius 100.0%,   #7ebcea,#223768);
+}
+#entrer:pressed {
+    -fx-padding: 10.0 15.0 13.0 15.0;
+    -fx-background-insets: 2.0 0.0 0.0 0.0,2.0 0.0 3.0 0.0, 2.0 0.0 4.0 0.0, 2.0 0.0 5.0 0.0;
+}
+#entrer  Text {
+    -fx-fill: white;
+    -fx-effect: dropshadow( gaussian , #a30000 , 0.0,0.0,0.0,2.0 );
+}/**
+ * REINITIALISER BOUTON
+ * ===================================================================================
+ * ===================================================================================
+ */
+ 
+ #reinitialiser  {
+    -fx-padding: 8.0 15.0 15.0 15.0;
+    -fx-background-insets: 0.0,0.0 0.0 5.0 0.0, 0.0 0.0 6.0 0.0, 0.0 0.0 7.0 0.0;
+    -fx-background-radius: 8.0;
+    -fx-background-color: 
+     linear-gradient(from 0.0% 93.0% to 0.0% 100.0%, #395cab 0.0%, #223768 100.0%),
+       #263e75,
+        #7ebcea,
+        radial-gradient(center 50.0% 50.0%, radius 100.0%, #7ebcea, #426ab7);
+    -fx-effect: dropshadow( gaussian , rgba(0.0,0.0,0.0,0.75) , 4.0,0.0,0.0,1.0 );
+    -fx-font-weight: bold;
+    -fx-font-size: 1.6em;
+    
+  
+}
+#reinitialiser:hover {
+    -fx-background-color: 
+        linear-gradient(from 0.0% 93.0% to 0.0% 100.0%, #395cab 0.0%, #223768 100.0%),
+         #263e75,
+        #7ebcea,
+        radial-gradient(center 50.0% 50.0%, radius 100.0%,   #7ebcea,#223768);
+}
+#reinitialiser:pressed {
+    -fx-padding: 10.0 15.0 13.0 15.0;
+    -fx-background-insets: 2.0 0.0 0.0 0.0,2.0 0.0 3.0 0.0, 2.0 0.0 4.0 0.0, 2.0 0.0 5.0 0.0;
+}
+#reinitialiser  Text {
+    -fx-fill: white;
+    -fx-effect: dropshadow( gaussian , #a30000 , 0.0,0.0,0.0,2.0 );
+}
+
+
+/**
+ * PANE
+ * ===================================================================================
+ * ===================================================================================
+ */
+#pane{
+    -fx-background-color: #FFF0F5;
+    -fx-padding: 15.0;
+    -fx-spacing: 10.0;
+}

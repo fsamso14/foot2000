@@ -27,7 +27,11 @@ import jxl.read.biff.BiffException;
 public class CollecteurArbitres implements Collecteur{
 
 	Workbook workbook;
+<<<<<<< HEAD
 	static String adresseFichier = "C:\\Users\\Fab\\Desktop\\FakeTest\\Arbitres.xls";
+=======
+public	static String adresseFichier = "C:\\Users\\Fab\\Desktop\\FakeTest\\Arbitres.xls";
+>>>>>>> branch 'master' of https://github.com/fsamso14/foot2000.git
 
 	/*"C:\\Users\\Mat\\Desktop\\Projets\\Foot2000"
 			+ "\\Projet Logiciel Désignations CDA EMN\\Annexes"
@@ -100,13 +104,30 @@ public class CollecteurArbitres implements Collecteur{
 				case "D3":
 					cat= ListeCategorieArbitre.D3;
 					break;			
+				case "D4":
+					cat= ListeCategorieArbitre.D4;
+					break;
 				case "AA1":
-					cat= new CategorieArbitre(categorie,30,2);
+					cat= ListeCategorieArbitre.AA1;
 					break;
 				case "AA2":
-					cat= new CategorieArbitre(categorie,30,2);
+					cat= ListeCategorieArbitre.AA2;
 					break;
-
+				case "U19R":
+					cat= ListeCategorieArbitre.U19R;
+					break;
+				case "U18A":
+					cat= ListeCategorieArbitre.U18A;
+					break;
+				case "U18B":
+					cat= ListeCategorieArbitre.U18B;
+					break;
+				case "U16":
+					cat= ListeCategorieArbitre.U16;
+					break;
+				case "U15":
+					cat= ListeCategorieArbitre.U15;
+					break;
 				default:
 
 				}

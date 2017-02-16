@@ -80,6 +80,13 @@ public class Representation {
 		return distances;		
 	}
 	
+	public Match[] getMatchs(){
+		return this.matchs;
+	}
+	public Arbitre[] getArbitres(){
+		return this.arbitres;
+	}
+	
 	public static void main(String[] args) throws Exception {
 		Representation r=new Representation();
 		System.out.println(r.getArbitre(32).getNom());
