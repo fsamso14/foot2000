@@ -8,16 +8,24 @@ import java.io.InputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
+import javafx.animation.Timeline;
+import javafx.application.Platform;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ProgressIndicator;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import Excel.CollecteurArbitres;
 import Excel.CollecteurCategorieArbitre;
 import Excel.CollecteurClubs;
@@ -37,6 +45,7 @@ public class MenuController implements Initializable {
 	private static final String DOCUMENTS = "documents/";
 	private static final String NOTICE = "NOTICE.pdf";
 	private static final String EMBLEME = "images/Embleme.jpg";
+	private static final double TEMPS_CALCUL = 35.0;
 
 	/**
 	 * 
@@ -75,6 +84,8 @@ public class MenuController implements Initializable {
 	private Button fileSelectArbitres;
 	@FXML
 	private Button notice;
+	@FXML
+	private ProgressIndicator progressBar;
 
 	/**
 	 * 
@@ -271,24 +282,52 @@ public class MenuController implements Initializable {
 					.getText();
 			CollecteurMatchs.adresseFichier = labelMatchs.getText();
 			CollecteurGroupements.adresseFichier = labelGroupements.getText();
-			foot2000.Main.run();
 
-			FileChooser filechooser = filechooser();
-			output = filechooser.showSaveDialog(new Stage()).getAbsolutePath();
-			if (output != null) {
-				File f = new File(output);
-				Createur.adresseFichier = output;
+			progression();
 
-				try {
-					f.createNewFile();
+			Thread t = new Thread(new Runnable() {
 
-					// ECRITURE FICHIER
+				@Override
+				public void run() {
 
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+					try {
+						foot2000.Main.run();
+						Platform.runLater(new Runnable() {
+
+							@Override
+							public void run() {
+
+								FileChooser filechooser = filechooser();
+								output = filechooser
+										.showSaveDialog(new Stage())
+										.getAbsolutePath();
+								if (output != null) {
+									File f = new File(output);
+									Createur.adresseFichier = output;
+
+									try {
+										if (f != null) {
+											f.createNewFile();
+										}
+
+										// ECRITURE FICHIER
+
+									} catch (IOException e) {
+										// TODO Auto-generated catch block
+										e.printStackTrace();
+									}
+								}
+
+							}
+						});
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				}
-			}
+			});
+			t.start();
+
 		} catch (Exception e) {
 			alert();
 		}
@@ -302,6 +341,32 @@ public class MenuController implements Initializable {
 		alert.setHeaderText("L'un des documents est invalide.");
 		alert.setContentText("Veuillez consulter la notice, et fournir les documents sous le format demandé.");
 		alert.show();
+
+	}
+
+	void progression() {
+		Platform.runLater(new Runnable() {
+
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+
+				progressBar.setVisible(true);
+
+				IntegerProperty seconds = new SimpleIntegerProperty();
+				progressBar.progressProperty().bind(
+						seconds.divide(TEMPS_CALCUL));
+				Timeline timeline = new Timeline(new KeyFrame(Duration.ZERO,
+						new KeyValue(seconds, 0)), new KeyFrame(Duration
+						.minutes(TEMPS_CALCUL / 60.0), e -> {
+
+					progressBar.setVisible(false);
+
+				}, new KeyValue(seconds, TEMPS_CALCUL)));
+
+				timeline.play();
+			}
+		});
 
 	}
 
@@ -352,6 +417,8 @@ public class MenuController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		imageView.setImage(new Image(EMBLEME));
+
+		progressBar.setVisible(false);
 
 		labelArbitre.setDisable(true);
 		labelClubs.setDisable(true);
