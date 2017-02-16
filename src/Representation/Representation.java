@@ -71,8 +71,9 @@ public class Representation {
 				
 					d.put(u,collecteur.getDistance(dist.get(s), dist.get(u)));
 				
-				distances.put(s,d);
+				
 			}
+			distances.put(s,d);
 		}
 		collecteur.getWorkbook().close();
 		return distances;		
