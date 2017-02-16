@@ -64,21 +64,33 @@ public class Createur {
 			String numMatch = workbook.getSheet(0).getCell(6, i).getContents();
 			for (int j = 1; j < r.getNbMatchs() + 1; j++) {
 				if (r.getMatch(j).getNumMatch().contains(numMatch)) {
-
-					Label ac = new Label(25, i,
-							r.getMatch(i).getArbitres()[0].getNom()
-									+ r.getMatch(i).getArbitres()[0]);
-					sheet.addCell(ac);
-
-					Label aa1 = new Label(26, i,
-							r.getMatch(i).getArbitres()[0].getNom()
-									+ r.getMatch(i).getArbitres()[1]);
-					sheet.addCell(aa1);
-
-					Label aa2 = new Label(27, i,
-							r.getMatch(i).getArbitres()[0].getNom()
-									+ r.getMatch(i).getArbitres()[2]);
-					sheet.addCell(aa2);
+					try {
+						Label ac = new Label(25, i,
+								r.getMatch(i).getArbitres()[0].getNom()
+										+ r.getMatch(i).getArbitres()[0]);
+						sheet.addCell(ac);
+					} catch (Exception e) {
+						// TODO: handle exception
+					}
+					
+					try {
+						Label aa1 = new Label(26, i,
+								r.getMatch(i).getArbitres()[0].getNom()
+										+ r.getMatch(i).getArbitres()[1]);
+						sheet.addCell(aa1);
+					} catch (Exception e) {
+						// TODO: handle exception
+					}
+					
+					try {
+						Label aa2 = new Label(27, i,
+								r.getMatch(i).getArbitres()[0].getNom()
+										+ r.getMatch(i).getArbitres()[2]);
+						sheet.addCell(aa2);
+					} catch (Exception e) {
+						// TODO: handle exception
+					}
+					
 				}
 			}
 
