@@ -122,8 +122,7 @@ public class MenuController implements Initializable {
 		FileChooser fileChooser = new FileChooser();
 
 		// L'application n'accepte que les formats .xls
-		FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter(
-				"XLS files (*.xls)", "*.xls");
+		FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("XLS files (*.xls)", "*.xls");
 		fileChooser.getExtensionFilters().add(extFilter);
 		fileChooser.setTitle("Veuillez selectionner votre fichier");
 		return fileChooser;
@@ -247,8 +246,7 @@ public class MenuController implements Initializable {
 	@FXML
 	void openNotice() {
 
-		InputStream pdfInJar = getClass().getClassLoader().getResourceAsStream(
-				DOCUMENTS + NOTICE);
+		InputStream pdfInJar = getClass().getClassLoader().getResourceAsStream(DOCUMENTS + NOTICE);
 		try {
 			File pdf = new File(NOTICE);
 			FileOutputStream fos = new java.io.FileOutputStream(pdf);
@@ -289,15 +287,12 @@ public class MenuController implements Initializable {
 						Platform.runLater(new Runnable() {
 							public void run() {
 								FileChooser filechooser = filechooser();
-								output = filechooser
-										.showSaveDialog(new Stage())
-										.getAbsolutePath();
+								output = filechooser.showSaveDialog(new Stage()).getAbsolutePath();
 								if (output != null) {
 									Createur.adresseFichier = output;
 									try {
 
-										Createur cr = new Createur(output, mod
-												.getRepresentation());
+										Createur cr = new Createur(output, mod.getRepresentation());
 										try {
 											cr.ecritureFichierExcel();
 										} catch (Exception e) {
@@ -351,15 +346,13 @@ public class MenuController implements Initializable {
 				progressBar.setVisible(true);
 
 				IntegerProperty seconds = new SimpleIntegerProperty();
-				progressBar.progressProperty().bind(
-						seconds.divide(TEMPS_CALCUL));
-				Timeline timeline = new Timeline(new KeyFrame(Duration.ZERO,
-						new KeyValue(seconds, 0)), new KeyFrame(Duration
-						.minutes(TEMPS_CALCUL / 60.0), e -> {
+				progressBar.progressProperty().bind(seconds.divide(TEMPS_CALCUL));
+				Timeline timeline = new Timeline(new KeyFrame(Duration.ZERO, new KeyValue(seconds, 0)),
+						new KeyFrame(Duration.minutes(TEMPS_CALCUL / 60.0), e -> {
 
-					progressBar.setVisible(false);
+							progressBar.setVisible(false);
 
-				}, new KeyValue(seconds, TEMPS_CALCUL)));
+						}, new KeyValue(seconds, TEMPS_CALCUL)));
 
 				timeline.play();
 			}
@@ -390,8 +383,6 @@ public class MenuController implements Initializable {
 	@FXML
 	public void reinitialize() {
 
-		FileChooser filechooser = filechooser();
-		output = filechooser.showSaveDialog(new Stage()).getAbsolutePath();
 		fichierArbitres = null;
 		fichierMatchs = null;
 		fichierClubs = null;
