@@ -57,7 +57,7 @@ public class CollecteurClubs implements Collecteur{
 	public HashMap<String,Club> getData() throws BiffException, IOException {
 		HashMap<String,Club> clubs=new  HashMap<String,Club>();
 		CollecteurClubs collecteur = new CollecteurClubs();
-		Sheet sheet1 = collecteur.getWorkbook().getSheet(1);
+		Sheet sheet1 = collecteur.getWorkbook().getSheet(0);
 		
 		CollecteurGroupements c=new CollecteurGroupements();
 		HashMap<String, ArrayList<String>> groupements=c.getData();
