@@ -68,12 +68,18 @@ public class Representation {
 		for(String s:dist.keySet()){
 			HashMap<String,Double> d=new HashMap<String,Double>();
 			for(String u:dist.keySet()){
-				
+					
+				if(s.contains(u)){
+					d.put(u,0.0);
+					
+				}
+				else{
 					d.put(u,collecteur.getDistance(dist.get(s), dist.get(u)));
+				}
 				
-				
+					distances.put(s,d);
 			}
-			distances.put(s,d);
+			
 		}
 		collecteur.getWorkbook().close();
 		return distances;		
