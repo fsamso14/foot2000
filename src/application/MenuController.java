@@ -290,12 +290,15 @@ public class MenuController implements Initializable {
 										.getAbsolutePath();
 								if (output != null) {
 									File f = new File(output);
-									Createur.adresseFichier = output;
 									try {
 										if (f != null) {
 											f.createNewFile();
+											Createur.adresseFichier = output;
 
-
+											// ECRITURE
+											// FICHIER======================
+											// =======================================
+											// ====================================================================================
 
 										}
 
@@ -400,6 +403,8 @@ public class MenuController implements Initializable {
 		labelIndispo.setVisible(false);
 		labelClubs.setVisible(false);
 		labelMatchs.setVisible(false);
+
+		progressBar.setVisible(false);
 
 	}
 
