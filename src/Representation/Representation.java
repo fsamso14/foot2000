@@ -20,13 +20,16 @@ public class Representation {
 	public Arbitre[] arbitres;
 	
 	/** Distances entre les clubs*/
-	HashMap<String,HashMap<String,Double>> distances;
+	public static HashMap<String,HashMap<String,Double>> distances;
 	
 	public Date samedi;
 	
 	public Representation() throws Exception{
 		CollecteurArbitres ca=new CollecteurArbitres();
 		CollecteurMatchs cm= new CollecteurMatchs();
+		CollecteurClubs cc=new CollecteurClubs();
+		
+		this.distances=cc.distances();
 		
 		HashMap<Integer, Arbitre> arbitreH = ca.getData();
 		this.arbitres= new Arbitre[arbitreH.size()];
@@ -61,18 +64,13 @@ public class Representation {
 		HashMap<String,HashMap<String,Double>> distances=new HashMap<String,HashMap<String,Double>>();
 		CollecteurClubs collecteur = new CollecteurClubs();
 		HashMap<String,Club> dist=collecteur.getData();
+		
 		for(String s:dist.keySet()){
-			//System.out.println(s);
 			HashMap<String,Double> d=new HashMap<String,Double>();
 			for(String u:dist.keySet()){
 				
-				if(s.contains(u)){
-					d.put(u,0.0);
-					
-				}
-				else{
 					d.put(u,collecteur.getDistance(dist.get(s), dist.get(u)));
-				}
+				
 				distances.put(s,d);
 			}
 		}
@@ -89,8 +87,7 @@ public class Representation {
 	
 	public static void main(String[] args) throws Exception {
 		Representation r=new Representation();
-		System.out.println(r.getArbitre(32).getNom());
-		System.out.println(r.distances().get(r.getArbitre(1).getClub().getId())
-				.get(r.getMatch(2).getReceveuse().getId()));
+		//System.out.println(r.getArbitre(32).getNom());
+		
 	}
 }

@@ -13,7 +13,7 @@ import jxl.read.biff.BiffException;
 public class CollecteurDisponibilitesArbitre implements Collecteur {
 
 	Workbook workbook;
-	public static String adresseFichier = "C:\\Users\\Fab\\Desktop\\FakeTest\\IndisposArbitres.xls";
+	public static String adresseFichier = "C:\\Users\\Mat\\Desktop\\FakeTest\\IndisposArbitres.xls";
 
 	public CollecteurDisponibilitesArbitre() throws BiffException, IOException {
 		WorkbookSettings ws = new WorkbookSettings();
@@ -85,7 +85,7 @@ public class CollecteurDisponibilitesArbitre implements Collecteur {
 		CollecteurDisponibilitesArbitre c = new CollecteurDisponibilitesArbitre();
 
 		System.out.println(c.getData().size());
-		System.out.println(c.getData().get("2543369222").disponible(1));
+		System.out.println(c.getData().get("2543369222").disponible(0));
 	}
 
 }

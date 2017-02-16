@@ -2,12 +2,10 @@ package Excel;
 
 import java.io.File;
 
+
 import java.io.IOException;
 import java.util.Calendar;
-<<<<<<< HEAD
-import java.util.Date;
-=======
->>>>>>> branch 'master' of https://github.com/fsamso14/foot2000.git
+
 
 import jxl.Cell;
 import jxl.Workbook;
@@ -62,21 +60,13 @@ public class Createur {
 			workbook.close();
 		}
 	}
-<<<<<<< HEAD
-	
-	public static void main(String[] args) throws RowsExceededException, BiffException, WriteException, IndexOutOfBoundsException, IOException {
-		//ecritureFichierExcel();
-		Calendar cal=Calendar.getInstance();		
-		System.out.println(cal.get(Calendar.DAY_OF_WEEK));
-		
-		
-=======
+
 
 	public static void main(String[] args) throws RowsExceededException,
 			BiffException, WriteException, IndexOutOfBoundsException,
 			IOException {
 		ecritureFichierExcel();
->>>>>>> branch 'master' of https://github.com/fsamso14/foot2000.git
+
 	}
 
 }

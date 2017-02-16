@@ -27,11 +27,9 @@ import jxl.read.biff.BiffException;
 public class CollecteurArbitres implements Collecteur{
 
 	Workbook workbook;
-<<<<<<< HEAD
-	static String adresseFichier = "C:\\Users\\Fab\\Desktop\\FakeTest\\Arbitres.xls";
-=======
+
 public	static String adresseFichier = "C:\\Users\\Fab\\Desktop\\FakeTest\\Arbitres.xls";
->>>>>>> branch 'master' of https://github.com/fsamso14/foot2000.git
+
 
 	/*"C:\\Users\\Mat\\Desktop\\Projets\\Foot2000"
 			+ "\\Projet Logiciel Désignations CDA EMN\\Annexes"
