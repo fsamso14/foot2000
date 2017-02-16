@@ -8,13 +8,6 @@ import java.io.InputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import Excel.CollecteurArbitres;
-import Excel.CollecteurCategorieArbitre;
-import Excel.CollecteurClubs;
-import Excel.CollecteurDisponibilitesArbitre;
-import Excel.CollecteurGroupements;
-import Excel.CollecteurMatchs;
-import Excel.Createur;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -25,6 +18,13 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import Excel.CollecteurArbitres;
+import Excel.CollecteurCategorieArbitre;
+import Excel.CollecteurClubs;
+import Excel.CollecteurDisponibilitesArbitre;
+import Excel.CollecteurGroupements;
+import Excel.CollecteurMatchs;
+import Excel.Createur;
 
 public class MenuController implements Initializable {
 
@@ -35,7 +35,7 @@ public class MenuController implements Initializable {
 	 * ========================================================================
 	 */
 	private static final String DOCUMENTS = "documents/";
-	private static final String NOTICE = "(All I Have to do is) Dream (1).pdf";
+	private static final String NOTICE = "NOTICE.pdf";
 	private static final String EMBLEME = "images/Embleme.jpg";
 
 	/**
@@ -89,6 +89,8 @@ public class MenuController implements Initializable {
 	File fichierGroupements;
 	File fichierClubs;
 	File fichierIndispo;
+
+	String output;
 
 	/**
 	 * 
@@ -252,6 +254,8 @@ public class MenuController implements Initializable {
 	 * ========================================================================
 	 * ========================================================================
 	 * 
+	 * @throws Exception
+	 * 
 	 * 
 	 * 
 	 */
@@ -259,6 +263,7 @@ public class MenuController implements Initializable {
 	@FXML
 	void handleEntrer() {
 		try {
+
 			CollecteurArbitres.adresseFichier = labelArbitre.getText();
 			CollecteurCategorieArbitre.adresseFichier = labelArbitre.getText();
 			CollecteurClubs.adresseFichier = labelClubs.getText();
@@ -266,12 +271,28 @@ public class MenuController implements Initializable {
 					.getText();
 			CollecteurMatchs.adresseFichier = labelMatchs.getText();
 			CollecteurGroupements.adresseFichier = labelGroupements.getText();
-
 			foot2000.Main.run();
 
+			FileChooser filechooser = filechooser();
+			output = filechooser.showSaveDialog(new Stage()).getAbsolutePath();
+			if (output != null) {
+				File f = new File(output);
+				Createur.adresseFichier = output;
+
+				try {
+					f.createNewFile();
+
+					// ECRITURE FICHIER
+
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
 		} catch (Exception e) {
 			alert();
 		}
+
 	}
 
 	void alert() {
